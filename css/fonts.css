@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Iransans";
+    src: url("../fonts/IRANSans.ttf");
+}
+@font-face {
+    font-family: "IransansBold";
+    src: url("../fonts/IRANSans_Bold.ttf");
+}
+@font-face {
+    font-family: "IransansMedium";
+    
+    src: url("../fonts/IRANSans_Medium.ttf");
+}
+@font-face {
+    font-family:"dana";
+    
+    src: url("../fonts/DanaFaNum-Medium.woff2");
+}

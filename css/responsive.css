@@ -1,0 +1,77 @@
+@media (min-width:568px) {
+   
+    .nth-one{
+        width: 50% !important;
+      }
+      .row{
+        row-gap: 0;
+    }
+   
+    .eror-wrapp h1{
+        font-size: 6rem;
+        height: 10rem;
+    }
+    .chekout-right{
+        width: 40% !important;
+    } 
+    .checkout-left{
+        
+        width: 50% !important;
+    }
+    .details-left{
+        width: 50% ;
+    }
+    .main-image{
+       
+           width:40.4rem;
+           height: 40.4rem;
+       }
+       .image-slide{
+        width: 8rem;
+        height: 8rem;
+        border: 1px solid #575656;
+        border-radius: 1rem;
+    }
+    .addcomment{
+        width: 40rem;
+    }
+}
+
+
+
+@media (min-width:768px) {
+    .main-header__menu{
+        font-size: 1.6rem !important;
+    }
+    .product-img{
+        width: 14rem;
+    }
+    .papular-product{
+        flex-wrap: nowrap;
+        padding: 5rem;
+    }
+    .papular-product__img{
+        width: 50rem;
+        height: 100%;
+    }
+    .row-two__column{
+        row-gap: 0;
+    }
+   
+    .dropdown-profile{
+      
+        right: -15.5rem;
+        
+       
+      }
+      .Final-registration__left{
+        width: 35% !important;
+    }
+    .copon-part{
+        width: 50% !important;
+    }
+    .eror-wrapp h1{
+        font-size: 9rem;
+        height: 13rem;
+    }
+}

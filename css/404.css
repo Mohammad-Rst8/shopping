@@ -1,0 +1,33 @@
+.eror-wrapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    
+}
+.back-home{
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem auto;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 1rem;
+    transition: all 300ms ease-in;
+    
+    
+}
+.eror-wrapp h1{
+    font-size: 4rem;
+ 
+    direction: ltr;
+}
+.back-home:hover{
+    
+    background-color: var(--dark-color);
+    color: var(--white-color);
+   
+}

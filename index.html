@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <title>online shop</title>
+  </head>
+  <body>
+    <svg style="display: none">
+      <symbol
+        id="menu"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </symbol>
+      <symbol
+        id="x"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
+
+      <symbol
+        id="logout"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 12H13.5M6 15L3 12L6 9M11 7V6C11 5.46957 11.2107 4.96086 11.5858 4.58579C11.9609 4.21071 12.4696 4 13 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H13C12.4696 20 11.9609 19.7893 11.5858 19.4142C11.2107 19.0391 11 18.5304 11 18V17"
+          stroke="#FAFAFA"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="myorder"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 6.3V20.5C3 20.7652 3.10536 21.0196 3.29289 21.2071C3.48043 21.3946 3.73478 21.5 4 21.5H20C20.2652 21.5 20.5196 21.3946 20.7071 21.2071C20.8946 21.0196 21 20.7652 21 20.5V6.3H3Z"
+          stroke="#FAFAFA"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M21 6.3L18.1665 2.5H5.8335L3 6.3M15.7775 9.6C15.7775 11.699 14.0865 13.4 12 13.4C9.9135 13.4 8.222 11.699 8.222 9.6"
+          stroke="#FAFAFA"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+
+      <symbol
+        id="car-delivery"
+        viewBox="0 0 41 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_807_335)">
+          <path
+            d="M12.1667 31.6667C14.0076 31.6667 15.5 30.1743 15.5 28.3333C15.5 26.4924 14.0076 25 12.1667 25C10.3257 25 8.83334 26.4924 8.83334 28.3333C8.83334 30.1743 10.3257 31.6667 12.1667 31.6667Z"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M28.8333 31.6667C30.6743 31.6667 32.1667 30.1743 32.1667 28.3333C32.1667 26.4924 30.6743 25 28.8333 25C26.9924 25 25.5 26.4924 25.5 28.3333C25.5 30.1743 26.9924 31.6667 28.8333 31.6667Z"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.83331 28.3335H7.49998C6.39541 28.3335 5.49998 27.4381 5.49998 26.3335V21.6668M3.83331 8.3335H20.1666C21.2712 8.3335 22.1666 9.22893 22.1666 10.3335V28.3335M15.5 28.3335H25.5M32.1667 28.3335H33.5C34.6046 28.3335 35.5 27.4381 35.5 26.3335V18.3335M35.5 18.3335H22.1666M35.5 18.3335L31.0826 10.9712C30.7211 10.3688 30.0701 10.0002 29.3676 10.0002H22.1666"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.5 28H7.16667C6.0621 28 5.16667 27.1046 5.16667 26V21.3333M3.5 8H19.8333C20.9379 8 21.8333 8.89543 21.8333 10V28M15.5 28H25.1667M32.5 28H33.1667C34.2712 28 35.1667 27.1046 35.1667 26V18M35.1667 18H21.8333M35.1667 18L30.7493 10.6377C30.3878 10.0353 29.7368 9.66667 29.0343 9.66667H21.8333"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5.5 11.8184H12.1667"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2.31818 15.4546H8.98484"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M5.5 19.0908H12.1667"
+            stroke="#FAFAFA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_807_335">
+            <rect
+              width="40"
+              height="40"
+              fill="white"
+              transform="translate(0.5)"
+            />
+          </clipPath>
+        </defs>
+      </symbol>
+      <symbol
+        id="customer-service"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_807_352)">
+          <path
+            d="M13.3334 24.9998C13.3334 23.1589 11.841 21.6665 10 21.6665C8.15907 21.6665 6.66669 23.1589 6.66669 24.9998V28.3332C6.66669 30.1741 8.15907 31.6665 10 31.6665C11.841 31.6665 13.3334 30.1741 13.3334 28.3332V24.9998Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M33.3334 24.9998C33.3334 23.1589 31.841 21.6665 30 21.6665C28.1591 21.6665 26.6667 23.1589 26.6667 24.9998V28.3332C26.6667 30.1741 28.1591 31.6665 30 31.6665C31.841 31.6665 33.3334 30.1741 33.3334 28.3332V24.9998Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.66669 24.9998V19.9998C6.66669 16.4636 8.07145 13.0722 10.5719 10.5717C13.0724 8.07126 16.4638 6.6665 20 6.6665C23.5362 6.6665 26.9276 8.07126 29.4281 10.5717C31.9286 13.0722 33.3334 16.4636 33.3334 19.9998V24.9998"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M30 31.6665C30 32.9926 28.9464 34.2644 27.0711 35.202C25.1957 36.1397 22.6522 36.6665 20 36.6665"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_807_352">
+            <rect width="40" height="40" fill="white" />
+          </clipPath>
+        </defs>
+      </symbol>
+      <symbol
+        id="secure"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.09906 30.5992L8.09883 30.5991C7.2261 29.9483 6.42549 28.9206 5.8427 27.759C5.25985 26.5973 4.91663 25.3451 4.91663 24.2666V11.8666C4.91663 9.50736 6.67146 6.96177 8.89112 6.13513L8.89208 6.13477L17.2083 3.01826C17.2084 3.01823 17.2085 3.0182 17.2086 3.01817C17.9621 2.73661 18.9615 2.5874 19.9833 2.5874C21.0051 2.5874 22.0045 2.73661 22.758 3.01817C22.7581 3.0182 22.7582 3.01823 22.7582 3.01826L31.0745 6.13477L31.0755 6.13513C33.2951 6.96177 35.05 9.50736 35.05 11.8666V24.2499C35.05 25.3371 34.7066 26.5892 34.124 27.7483C33.5415 28.9073 32.741 29.9313 31.8678 30.5824L31.8675 30.5826L24.7009 35.9326L24.7008 35.9325L24.6946 35.9373C23.4119 36.9264 21.724 37.4332 20 37.4332C18.2773 37.4332 16.5851 36.927 15.2648 35.9486C15.2647 35.9484 15.2645 35.9483 15.2644 35.9482L8.09906 30.5992ZM17.7418 4.43145L17.7412 4.4317L9.4245 7.54837L9.42379 7.54863C8.59621 7.86019 7.85498 8.52248 7.32406 9.29061C6.79297 10.059 6.43329 10.9898 6.43329 11.8832V24.2666C6.43329 25.161 6.74388 26.1892 7.20088 27.101C7.65776 28.0126 8.29325 28.8722 9.00081 29.4005L9.00085 29.4006L16.1672 34.7503C17.2292 35.5445 18.6282 35.9249 20.002 35.9249C21.376 35.9249 22.7782 35.5445 23.8477 34.7516L23.8491 34.7506L31.0157 29.4006L31.0166 29.3999C31.7314 28.8638 32.3668 28.005 32.8222 27.0943C33.2775 26.1837 33.5833 25.16 33.5833 24.2666V11.8666C33.5833 10.9804 33.2229 10.0538 32.6925 9.28645C32.162 8.51889 31.4223 7.85396 30.5976 7.5338L30.5976 7.53376L30.5921 7.5317L22.2754 4.41503L22.2755 4.41495L22.2664 4.41174C21.6282 4.18651 20.8001 4.08314 20.0007 4.08532C19.202 4.0875 18.3751 4.19514 17.7418 4.43145Z"
+          fill="#FAFAFA"
+          stroke="#FAFAFA"
+        />
+        <path
+          d="M17.4131 21.0536L17.7667 21.4071L18.1202 21.0536L24.4036 14.7703C24.6916 14.4822 25.1751 14.4822 25.4631 14.7703C25.7512 15.0583 25.7512 15.5417 25.4631 15.8298L18.2965 22.9965C18.1452 23.1478 17.9579 23.2167 17.7667 23.2167C17.5755 23.2167 17.3882 23.1478 17.2369 22.9965L14.5536 20.3131C14.2655 20.0251 14.2655 19.5417 14.5536 19.2536C14.8416 18.9655 15.3251 18.9655 15.6131 19.2536L17.4131 21.0536Z"
+          fill="#FAFAFA"
+          stroke="#FAFAFA"
+        />
+      </symbol>
+      <symbol
+        id="twitter"
+        viewBox="0 0 21 17"
+        stroke="white"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.905 4.84651L10.905 4.84646C10.9194 4.06035 11.2418 3.3113 11.8028 2.76049C12.3639 2.20969 13.1188 1.90116 13.905 1.90129L10.905 4.84651ZM10.905 4.84651L10.877 6.42135M10.905 4.84651L10.877 6.42135M2.75811 3.80857L2.89001 3.91846C4.76679 5.48211 6.71781 6.41823 8.74946 6.6952C8.74947 6.6952 8.74949 6.6952 8.74951 6.6952L10.3104 6.90718L2.75811 3.80857ZM2.75811 3.80857L2.72759 3.97751M2.75811 3.80857L2.72759 3.97751M2.72759 3.97751C2.42576 5.64819 2.5683 7.07086 3.1479 8.30176C3.72718 9.53198 4.73827 10.5605 6.15577 11.4519L6.15579 11.452M2.72759 3.97751L6.15579 11.452M6.15579 11.452L7.90279 12.55L7.954 12.4685M6.15579 11.452L7.954 12.4685M7.954 12.4685L7.90279 12.55C7.97196 12.5934 8.02943 12.6532 8.07016 12.724C8.1109 12.7948 8.13366 12.8745 8.13645 12.9562C8.13925 13.0378 8.122 13.1189 8.0862 13.1924C8.05041 13.2658 7.99716 13.3294 7.93112 13.3775L7.93101 13.3775M7.954 12.4685L7.93101 13.3775M7.93101 13.3775L6.33901 14.5405L6.11542 14.7039M7.93101 13.3775L6.11542 14.7039M6.11542 14.7039L6.39178 14.7211M6.11542 14.7039L6.39178 14.7211M6.39178 14.7211C7.3449 14.7805 8.25288 14.7385 9.00946 14.5884L9.00958 14.5884M6.39178 14.7211L9.00958 14.5884M9.00958 14.5884C11.3886 14.1134 13.3745 12.9794 14.7652 11.2211M9.00958 14.5884L14.7652 11.2211M10.877 6.42135C10.8757 6.49182 10.8594 6.5612 10.8293 6.62495C10.7993 6.6887 10.7561 6.74537 10.7026 6.79125C10.649 6.83712 10.5864 6.87117 10.5188 6.89115C10.4513 6.91112 10.3803 6.91659 10.3105 6.9072L10.877 6.42135ZM14.7652 11.2211C16.1557 9.46296 16.945 7.08835 16.945 4.14229M14.7652 11.2211L16.945 4.14229M16.945 4.14229C16.945 3.99668 16.8714 3.78474 16.744 3.55722M16.945 4.14229L16.744 3.55722M16.744 3.55722C16.6142 3.32559 16.4215 3.06508 16.1673 2.82049M16.744 3.55722L16.1673 2.82049M16.1673 2.82049C15.6587 2.33088 14.8999 1.90129 13.905 1.90129L16.1673 2.82049ZM18.4978 1.53842C18.8818 1.48388 19.3285 1.34345 19.916 1.01105C19.6101 2.49526 19.4321 3.16764 18.7642 4.08336L18.745 4.10969V4.14229C18.745 7.94153 17.578 10.7567 15.8258 12.7397C14.0726 14.7238 11.7277 15.8813 9.36243 16.3532C7.74529 16.6759 5.7544 16.5728 3.99643 16.2106C3.11813 16.0296 2.30077 15.7846 1.61983 15.4974C1.03727 15.2517 0.560091 14.9775 0.229559 14.6904C0.660648 14.6482 1.4114 14.5535 2.24366 14.3598C3.24355 14.1272 4.37173 13.7494 5.20306 13.141L5.31918 13.056L5.19904 12.9768C5.15724 12.9492 5.11178 12.9196 5.06301 12.8879C4.30477 12.3938 2.74648 11.3786 1.73155 9.51655C0.667136 7.56374 0.192566 4.66295 1.91362 0.425918C3.57889 2.34347 5.2726 3.66001 6.99504 4.3668L6.99505 4.36681C7.57662 4.60536 7.94255 4.72373 8.23185 4.79141C8.45087 4.84265 8.62608 4.86463 8.81173 4.88794C8.87034 4.89529 8.92998 4.90278 8.99238 4.91135L9.28722 4.95189L9.10594 4.77077C9.13096 3.8414 9.42538 2.93895 9.95386 2.17331C10.4904 1.39606 11.2442 0.79434 12.1211 0.443497C12.9979 0.0926537 13.9588 0.00827681 14.8833 0.200931C15.8079 0.393585 16.6551 0.854708 17.3189 1.52657L17.3485 1.55658L17.3907 1.55628C17.4934 1.55556 17.5972 1.55908 17.7036 1.56269C17.9483 1.57098 18.2068 1.57974 18.4978 1.53842Z"
+          stroke="white"
+          stroke-width="0.4"
+        />
+      </symbol>
+      <symbol
+        id="instagram"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 1H5C3.93913 1 2.92172 1.42143 2.17157 2.17157C1.42143 2.92172 1 3.93913 1 5V15C1 16.0609 1.42143 17.0783 2.17157 17.8284C2.92172 18.5786 3.93913 19 5 19H15C16.0609 19 17.0783 18.5786 17.8284 17.8284C18.5786 17.0783 19 16.0609 19 15V5C19 3.93913 18.5786 2.92172 17.8284 2.17157C17.0783 1.42143 16.0609 1 15 1Z"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 14C11.0609 14 12.0783 13.5786 12.8284 12.8284C13.5786 12.0783 14 11.0609 14 10C14 8.93913 13.5786 7.92172 12.8284 7.17157C12.0783 6.42143 11.0609 6 10 6C8.93913 6 7.92172 6.42143 7.17157 7.17157C6.42143 7.92172 6 8.93913 6 10C6 11.0609 6.42143 12.0783 7.17157 12.8284C7.92172 13.5786 8.93913 14 10 14V14Z"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M15.5 5.5C15.7652 5.5 16.0196 5.39464 16.2071 5.20711C16.3946 5.01957 16.5 4.76522 16.5 4.5C16.5 4.23478 16.3946 3.98043 16.2071 3.79289C16.0196 3.60536 15.7652 3.5 15.5 3.5C15.2348 3.5 14.9804 3.60536 14.7929 3.79289C14.6054 3.98043 14.5 4.23478 14.5 4.5C14.5 4.76522 14.6054 5.01957 14.7929 5.20711C14.9804 5.39464 15.2348 5.5 15.5 5.5Z"
+        />
+      </symbol>
+      <symbol
+        id="linkden"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.5 6.05C9.417 5.113 10.611 4.5 12 4.5C13.4587 4.5 14.8576 5.07946 15.8891 6.11091C16.9205 7.14236 17.5 8.54131 17.5 10V17.5H15.5V10C15.5 9.07174 15.1313 8.1815 14.4749 7.52513C13.8185 6.86875 12.9283 6.5 12 6.5C11.0717 6.5 10.1815 6.86875 9.52513 7.52513C8.86875 8.1815 8.5 9.07174 8.5 10V17.5H6.5V5H8.5V6.05ZM1.5 3C1.10218 3 0.720644 2.84196 0.43934 2.56066C0.158035 2.27936 0 1.89782 0 1.5C0 1.10218 0.158035 0.720644 0.43934 0.43934C0.720644 0.158035 1.10218 0 1.5 0C1.89782 0 2.27936 0.158035 2.56066 0.43934C2.84196 0.720644 3 1.10218 3 1.5C3 1.89782 2.84196 2.27936 2.56066 2.56066C2.27936 2.84196 1.89782 3 1.5 3ZM0.5 5H2.5V17.5H0.5V5Z"
+        />
+      </symbol>
+      <symbol
+        id="facebook"
+        viewBox="0 0 11 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 7H10.5L10 9H6V18H4V9H0V7H4V5.128C4 3.345 4.186 2.698 4.534 2.046C4.87501 1.40181 5.40181 0.875009 6.046 0.534C6.698 0.186 7.345 0 9.128 0C9.65 0 10.108 0.0500001 10.5 0.15V2H9.128C7.804 2 7.401 2.078 6.99 2.298C6.686 2.46 6.46 2.686 6.298 2.99C6.078 3.401 6 3.804 6 5.128V7Z"
+        />
+      </symbol>
+
+      <symbol
+        id="right-arrow"
+        viewBox="0 0 19 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1.5 8H18M18 8L11 1M18 8L11 15"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="search-icon"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17 17L13.2223 13.2156M15.3158 8.15789C15.3158 10.0563 14.5617 11.8769 13.2193 13.2193C11.8769 14.5617 10.0563 15.3158 8.15789 15.3158C6.2595 15.3158 4.43886 14.5617 3.0965 13.2193C1.75413 11.8769 1 10.0563 1 8.15789C1 6.2595 1.75413 4.43886 3.0965 3.0965C4.43886 1.75413 6.2595 1 8.15789 1C10.0563 1 11.8769 1.75413 13.2193 3.0965C14.5617 4.43886 15.3158 6.2595 15.3158 8.15789V8.15789Z"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+      </symbol>
+
+      <symbol
+        id="buy-icon"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3 5H7L10 22H26"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+
+      <symbol
+        id="profile-icon"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M24 27V24.3333C24 22.9188 23.5224 21.5623 22.6722 20.5621C21.8221 19.5619 20.669 19 19.4667 19H11.5333C10.331 19 9.17795 19.5619 8.32778 20.5621C7.47762 21.5623 7 22.9188 7 24.3333V27"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16.5 14C18.9853 14 21 11.9853 21 9.5C21 7.01472 18.9853 5 16.5 5C14.0147 5 12 7.01472 12 9.5C12 11.9853 14.0147 14 16.5 14Z"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol
+        id="chevrown-down"
+        viewBox="0 0 13 8"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.36403 4.95L11.314 0L12.728 1.414L6.36403 7.778L2.67029e-05 1.414L1.41403 0L6.36403 4.95Z"
+        />
+      </symbol>
+
+      <symbol id="toman" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+        <path
+          fill-rule="evenodd"
+          d="M3.057 1.742L3.821 1l.78.75-.776.741-.768-.749zm3.23 2.48c0 .622-.16 1.111-.478 1.467-.201.221-.462.39-.783.505a3.251 3.251 0 01-1.083.163h-.555c-.421 0-.801-.074-1.139-.223a2.045 2.045 0 01-.9-.738A2.238 2.238 0 011 4.148c0-.059.001-.117.004-.176.03-.55.204-1.158.525-1.827l1.095.484c-.257.532-.397 1-.419 1.403-.002.04-.004.08-.004.12 0 .252.055.458.166.618a.887.887 0 00.5.354c.085.028.178.048.278.06.079.01.16.014.243.014h.555c.458 0 .769-.081.933-.244.14-.139.21-.383.21-.731V2.02h1.2v2.202zm5.433 3.184l-.72-.7.709-.706.735.707-.724.7zm-2.856.308c.542 0 .973.19 1.293.569.297.346.445.777.445 1.293v.364h.18v-.004h.41c.221 0 .377-.028.467-.084.093-.055.14-.14.14-.258v-.069c.004-.243.017-1.044 0-1.115L13 8.05v1.574a1.4 1.4 0 01-.287.863c-.306.405-.804.607-1.495.607h-.627c-.061.733-.434 1.257-1.117 1.573-.267.122-.58.21-.937.265a5.845 5.845 0 01-.914.067v-1.159c.612 0 1.072-.082 1.38-.247.25-.132.376-.298.376-.499h-.515c-.436 0-.807-.113-1.113-.339-.367-.273-.55-.667-.55-1.18 0-.488.122-.901.367-1.24.296-.415.728-.622 1.296-.622zm.533 2.226v-.364c0-.217-.048-.389-.143-.516a.464.464 0 00-.39-.187.478.478 0 00-.396.187.705.705 0 00-.136.449.65.65 0 00.003.067c.008.125.066.22.177.283.093.054.21.08.352.08h.533zM9.5 6.707l.72.7.724-.7L10.209 6l-.709.707zm-6.694 4.888h.03c.433-.01.745-.106.937-.29.024.012.065.035.12.068l.074.039.081.042c.135.073.261.133.379.18.345.146.67.22.977.22a1.216 1.216 0 00.87-.34c.3-.285.449-.714.449-1.286a2.19 2.19 0 00-.335-1.145c-.299-.457-.732-.685-1.3-.685-.502 0-.916.192-1.242.575-.113.132-.21.284-.294.456-.032.062-.06.125-.084.191a.504.504 0 00-.03.078 1.67 1.67 0 00-.022.06c-.103.309-.171.485-.205.53-.072.09-.214.14-.427.147-.123-.005-.209-.03-.256-.076-.057-.054-.085-.153-.085-.297V7l-1.201-.5v3.562c0 .261.048.496.143.703.071.158.168.296.29.413.123.118.266.211.43.28.198.084.42.13.665.136v.001h.036zm2.752-1.014a.778.778 0 00.044-.353.868.868 0 00-.165-.47c-.1-.134-.217-.201-.35-.201-.18 0-.33.103-.447.31-.042.071-.08.158-.114.262a2.434 2.434 0 00-.04.12l-.015.053-.015.046c.142.118.323.216.544.293.18.062.325.092.433.092.044 0 .086-.05.125-.152z"
+          clip-rule="evenodd"
+        ></path>
+      </symbol>
+    </svg>
+
+ <header>
+      <div class="top-bar">
+        <div class="container-fluid">
+          <div class="top-bar__content flex-md-row">
+            <div class="top-bar__right flex-md-row">
+              <h1>
+                <a href="/index.html">آنلاین شاپ</a>
+              </h1>
+              <div class="top-bar__search">
+                <button type="button" class="top-bar--search__btn" title="button">
+                  <svg class="arrow">
+                    <use href="#search-icon"></use>
+                  </svg>
+                </button>
+                <input
+                  type="text"
+                  placeholder="جستجو"
+                  class="top-bar--search__input"
+                />
+                <div>
+                  <div class="searchbar-menu ">
+                   
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="top-bar__left">
+              <div class="top-bar--buy">
+                <button type="button" class="btn" title="button">
+                  <svg class="arrow">
+                    <use href="#buy-icon"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="top-bar--profile">
+                <button type="button" class="btn" title="button">
+                  <svg class="arrow">
+                    <use href="#profile-icon"></use>
+                  </svg>
+                </button>
+                <div class="dropdown-profile">
+                  <ul class="dropdown-profile__menu">
+                    <li class="dropdown-profile__menu--item">
+                      <a
+                        href="account managment.html"
+                        class="dropdown-profile__menu--link"
+                      >
+                        <svg>
+                          <use href="#profile-icon"></use>
+                        </svg>
+                        <p>مدیریت اکانت</p>
+                      </a>
+                    </li>
+                    <li class="dropdown-profile__menu--item">
+                      <a href="#" class="dropdown-profile__menu--link">
+                        <svg>
+                          <use href="#myorder"></use>
+                        </svg>
+                        <p>گزارشات خرید</p>
+                      </a>
+                    </li>
+                    <li class="dropdown-profile__menu--item">
+                      <button
+                        type="submit"
+                        class="dropdown-profile__menu--link"
+                        id="logout-btn"
+                      >
+                        <svg>
+                          <use href="#logout"></use>
+                        </svg>
+                        <p>خروج از حساب</p>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-block d-md-none">
+                <button type="button" class="btn" id="menubtn" title="button">
+                  <svg class="arrow">
+                    <use href="#menu"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="main-header__right d-md-block">
+            <ul class="main-header__menu fs-5">
+              <li class="header-menu__item header-menu__item-product" data-cat="women">
+                <a href="#" class="header-menu_item_link">
+                  زنانه
+                  <svg>
+                    <use href="#chevrown-down"></use>
+                  </svg>
+                </a>
+                <ul class="submenu">
+                  <li class="submenu-item" data-cat="women" title="Shirt">
+                    <a href="#" class="submenu-item__link" >پیراهن</a>
+                  </li>
+                  <li class="submenu-item" data-cat="women" title="TShirt">
+                    <a href="#" class="submenu-item__link" >تیشرت</a>
+                  </li>
+                  <li class="submenu-item" data-cat="women" title="Shoes">
+                    <a href="#" class="submenu-item__link" >کفش</a>
+                  </li>
+                  <li class="submenu-item" data-cat="women" title="Pants">
+                    <a href="#" class="submenu-item__link" >شلوار</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="men">
+                <a href="#" class="header-menu_item_link">
+                  مردانه
+                  <svg
+                    width="11"
+                    height="8"
+                    viewBox="0 0 13 8"
+                    fill="#000"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.36403 4.95L11.314 0L12.728 1.414L6.36403 7.778L2.67029e-05 1.414L1.41403 0L6.36403 4.95Z"
+                    />
+                  </svg>
+                </a>
+                <ul class="submenu">
+                  <li class="submenu-item" data-cat="men"title="Shirt">
+                    <a href="#" class="submenu-item__link" >پیراهن</a>
+                  </li>
+                  <li class="submenu-item" data-cat="men" title="TShirt">
+                    <a href="#" class="submenu-item__link" >تیشرت</a>
+                  </li>
+                  <li class="submenu-item" data-cat="men" title="Shoes">
+                    <a href="#" class="submenu-item__link" >کفش</a>
+                  </li>
+                  <li class="submenu-item" data-cat="men" title="Pants">
+                    <a href="#" class="submenu-item__link" >شلوار</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="digital">
+                <a href="#" class="header-menu_item_link"> الکترونیکی </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="home">
+                <a href="#" class="header-menu_item_link"> خانه و آشپزخانه </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="medical">
+                <a href="#" class="header-menu_item_link"> پزشکی </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="sport">
+                <a href="#" class="header-menu_item_link"> ورزشی </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="children">
+                <a href="#" class="header-menu_item_link"> کودک </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="food">
+                <a href="#" class="header-menu_item_link"> موادغذایی </a>
+              </li>
+              <li class="header-menu__item header-menu__item-product" data-cat="healthy">
+                <a href="#" class="header-menu_item_link"> سلامت و زیبایی </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mobile-topbar d-md-none">
+          <button type="button" class="xicon" title="button">
+            <svg>
+              <use href="#x"></use>
+            </svg>
+          </button>
+          <ul class="mobile-menu">
+            <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="women">
+              <a href="#" class="header-menu_item_link">
+                زنانه
+                <svg>
+                  <use href="#chevrown-down"></use>
+                </svg>
+              </a>
+              <ul class="submenu-mobile  submenu-mobile__women">
+                <li class="submenu-item" data-cat="women" title="Shirt">
+                  <a href="#" class="submenu-item__link">پیراهن</a>
+                </li>
+                <li class="submenu-item" data-cat="women" title="TShirt">
+                  <a href="#" class="submenu-item__link">تیشرت</a>
+                </li>
+                <li class="submenu-item" data-cat="women" title="Shoes">
+                  <a href="#" class="submenu-item__link">کفش</a>
+                </li>
+                <li class="submenu-item" data-cat="women" title="Pants">
+                  <a href="#" class="submenu-item__link">شلوار</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="men">
+              <a href="#" class="header-menu_item_link">
+                مردانه
+                <svg
+                  width="11"
+                  height="8"
+                  viewBox="0 0 13 8"
+                  fill="#000"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.36403 4.95L11.314 0L12.728 1.414L6.36403 7.778L2.67029e-05 1.414L1.41403 0L6.36403 4.95Z"
+                  />
+                </svg>
+              </a>
+              <ul class="submenu-mobile  submenu-mobile__men">
+                <li class="submenu-item" data-cat="men" title="Shirt">
+                  <a href="#" class="submenu-item__link">پیراهن</a>
+                </li>
+                <li class="submenu-item" data-cat="men" title="TShirt">
+                  <a href="#" class="submenu-item__link">تیشرت</a>
+                </li>
+                <li class="submenu-item" data-cat="men" title="Shoes">
+                  <a href="#" class="submenu-item__link">کفش</a>
+                </li>
+                <li class="submenu-item" data-cat="men" title="Pants">
+                  <a href="#" class="submenu-item__link">شلوار</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product" data-cat="digital">
+              <a href="#" class="header-menu_item_link"> الکترونیکی </a>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product" data-cat="home">
+              <a href="#" class="header-menu_item_link"> خانه و آشپزخانه </a>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product" data-cat="medical">
+              <a href="#" class="header-menu_item_link"> پزشکی </a>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product"  data-cat="sport">
+              <a href="#" class="header-menu_item_link"> ورزشی </a>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product" data-cat="children">
+              <a href="#" class="header-menu_item_link"> کودک </a>
+            </li>
+            <li class="header-mobile__menu-item px-2 px-lg-3 header-menu__item-product" data-cat="food">
+              <a href="#" class="header-menu_item_link"> موادغذایی </a>
+            </li>
+            <li class="header-mobile__menu-item" data-cat="healthy">
+              <a href="#" class="header-menu_item_link"> سلامت و زیبایی </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
+    <section class="main-header">
+      <div class="container">
+        <div class="main-header--content">
+          <div class="main-header__left d-none d-md-flex">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-sale">
+      <div class="sections-title">
+        <div class="container">
+          <div class="special-sale__head">
+            <div class="special-sale__head--title">
+              <h4>پیشنهاد امروز</h4>
+            </div>
+            <div class="special-sale__head--content flex-column flex-md-row">
+              <div class="special-sale__head--wrapp flex-md-row gap-3 gap-md-5">
+                <h2 class="special-sale__head--subtitle">فروش ویژه</h2>
+                <div class="special-sale__head--clock">
+                  <div class="clock-item__wrapp">
+                    <span class="clock-title">روز</span>
+                    <span class="clock-content clock-day">03</span>
+                  </div>
+                  <span class="clock-cotation">:</span>
+                  <div class="clock-item__wrapp">
+                    <span class="clock-title">ساعت</span>
+                    <span class="clock-content clock-hour">12</span>
+                  </div>
+                  <span class="clock-cotation">:</span>
+                  <div class="clock-item__wrapp">
+                    <span class="clock-title">دقیقه</span>
+                    <span class="clock-content clock-minutes">52</span>
+                  </div>
+                  <span class="clock-cotation">:</span>
+                  <div class="clock-item__wrapp">
+                    <span class="clock-title">ثانیه</span>
+                    <span class="clock-content clock-seconds">60</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="pageination">
+                  <button
+                    type="button"
+                    class="pageination-arrow__right pageination-arrow btn"
+                  >
+                    <svg class="arrow">
+                      <use href="#right-arrow"></use>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="pageination-arrow__left pageination-arrow btn"
+                  >
+                    <svg class="arrow">
+                      <use href="#right-arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="swiperproduct">
+          <!-- Additional required wrapper -->
+          <div class="swiperproduct-wrapper">
+            <!-- load Slides in js -->
+           
+          </div>
+          <!-- If we need pagination -->
+        </div>
+      </div>
+      <a href="products.html" class="view-all--btn buttons" id="view-all__special">
+        مشاهده همه
+        <svg class="arrow fillarrow">
+          <use href="#right-arrow"></use>
+        </svg>
+      </a>
+    </section>
+
+    <section class="popular-products">
+      <div class="sections-title">
+        <div class="container">
+          <div class="special-sale__head">
+            <div class="special-sale__head--title">
+              <h4>ماه گذشته</h4>
+            </div>
+            <div class="special-sale__head--content">
+              <div class="special-sale__head--wrapp">
+                <h2 class="special-sale__head--subtitle">
+                  پرفروش ترین محصولات
+                </h2>
+              </div>
+
+              <a href="products.html" class="view-all--btn buttons" id="view-all__best">
+                مشاهده همه
+                <svg class="arrow fillarrow">
+                  <use href="#right-arrow"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row" style="margin-bottom: 1rem; row-gap: 1rem" id="best-sales">
+        
+ 
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="papular-product">
+          <div class="papular-product__right">
+            <h3 class="papular-product__title">
+              کیفیت و تجربه موسیقی خود را افزایش دهید.
+            </h3>
+            <div class="popular-timer__wrapp">
+              <div class="hour popular-timer">
+                <span class="clock-content clock-hour">12</span>
+                <span class="clock-title">ساعت</span>
+              </div>
+
+              <div class="popular-timer">
+                <span class="clock-content clock-minutes">52</span>
+                <span class="clock-title">دقیقه</span>
+              </div>
+
+              <div class="popular-timer">
+                <span class="clock-content clock-seconds">60</span>
+                <span class="clock-title">ثانیه</span>
+              </div>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="buttons"
+                style="margin: 2rem 0; background-color: #00ff66"
+              >
+                خرید
+                <svg class="arrow fillarrow" style="transform: rotate(180deg)">
+                  <use href="#right-arrow"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="papular-product__left">
+            <img
+              src="images/popular product/speaker.png"
+              alt="speaker"
+              class="papular-product__img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="new-arrival">
+      <div class="sections-title">
+        <div class="container">
+          <div class="special-sale__head">
+            <div class="special-sale__head--title">
+              <h4>اختصاصی</h4>
+            </div>
+            <div class="special-sale__head--content">
+              <div class="special-sale__head--wrapp">
+                <h2
+                  class="special-sale__head--subtitle"
+                  style="margin: 2rem 1rem"
+                >
+                  جدیدترین محصولات
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="arrival-wrapp">
+          <div class="row newarrival-mainrow">
+            <div class="col-12 col-lg-6 arrival-column">
+              <div class="row">
+                <div class="col-12 arrival-column">
+                  <div class="arrival-box">
+                    <div class="arrival-image">
+                      <img
+                        src="./images/arrival/woman.png"
+                        alt="woman"
+                        class="w-75 nth-one arrival-img"
+                      />
+                    </div>
+                    <div class="arrival-text">
+                      <h3 class="arrival-title">پوشاک زنانه</h3>
+                      <p class="arrival-content">
+                       جدیدترین و زیباترین پیراهن های زنانه را از ما بخواهید
+                      </p>
+                      <a href="#" class="arrival-link">خرید</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-two__column">
+                <div class="col-12 col-md-6 arrival-column">
+                  <div class="arrival-box">
+                    <div class="arrival-image">
+                      <img
+                        src="./images/arrival/echo.png"
+                        alt="woman"
+                        class="arrival-img"
+                      />
+                    </div>
+                    <div class="arrival-text">
+                      <h3 class="arrival-title">اسپیکر</h3>
+                      <p class="arrival-content">
+                        اسپیکر و باند های قدرتمند و اقتصادی
+                      </p>
+                      <a href="#" class="arrival-link">خرید</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 arrival-column">
+                  <div class="arrival-box">
+                    <div class="arrival-image">
+                      <img
+                        src="./images//arrival/Frame 706.png"
+                        alt="woman"
+                        class="arrival-img"
+                      />
+                    </div>
+                    <div class="arrival-text">
+                      <h3 class="arrival-title">اسپری های خنک</h3>
+                      <p class="arrival-content">
+                        خوشبو ترین اسپری های بدن
+                      </p>
+                      <a href="#" class="arrival-link">خرید</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 arrival-column">
+              <div class="arrival-box">
+                <div class="arrival-image__lastchild">
+                  <img src="./images//arrival/ps5.png" alt="ps5" />
+                </div>
+                <div class="arrival-text">
+                  <h3 class="arrival-title">پلی استیشن 5</h3>
+                  <p class="arrival-content">
+                   نسخه سفید و سیاه کنسول بازی
+                  </p>
+                  <a href="#" class="arrival-link">خرید</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="support">
+          <div class="row">
+            <div class="col-12 col-md-4 my-3">
+              <div class="support-box">
+                <div class="support-image">
+                  <div class="image-bg">
+                    <svg>
+                      <use href="#secure"></use>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="support-title">تضمین بازگشت پول</h3>
+                <p class="support-subtitle">ما پول را ظرف 30 روز پس می دهیم</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 my-3">
+              <div class="support-box">
+                <div class="support-image">
+                  <div class="image-bg">
+                    <svg>
+                      <use href="#customer-service"></use>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="support-title">خدمات 24/7 به مشتریان</h3>
+                <p class="support-subtitle">پشتیبانی دوستانه 24/7 مشتری</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 my-3">
+              <div class="support-box">
+                <div class="support-image">
+                  <div class="image-bg">
+                    <svg>
+                      <use href="#car-delivery"></use>
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="support-title">تحویل رایگان و سریع</h3>
+                <p class="support-subtitle">
+                  ارسال رایگان برای سفارشات بالای 140 هزار تومان
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="footerelems flex-column flex-md-row">
+            <div class="footer-bio">
+              <h2 class="contact-title">آنلاین شاپ</h2>
+              <p class="footer-bio__subtitle">
+                این آنلاین شاپ جهت آزمایش بوده و هیچ جنبه ی دیگری ندارد.
+              </p>
+              <h4 class="footer-bio__off">
+                ما را در اینستاگرام دنبال کنید و 10% تخفیف بگیرید.
+              </h4>
+            </div>
+
+            <div class="footer-support">
+              <ul class="footer-support__menu">
+                <li class="footer-support__item">
+                  <h3 class="contact-title">پشتیبانی</h3>
+                </li>
+                <li class="footer-support__item">
+                  <p>لرستان، دورود، خیبان 90 متری</p>
+                </li>
+                <li class="footer-support__item">
+                  <a
+                    href="mailto:mohammad.rostamimajd8@gmail.com"
+                    class="footer-support__item--link"
+                  >
+                    mohammad.rostamimajd8@gmail.com
+                  </a>
+                </li>
+                <li class="footer-support__item">
+                  <a
+                    href="tel:+989033868382"
+                    class="footer-support__item--link"
+                  >
+                    09033868382
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact">
+              <h3 class="contact-title">ارتباط با ما</h3>
+              <p class="footer-subtitle">ما را در فضای مجازی دنبال کنید:</p>
+              <div class="appstores">
+                <div class="qrcode">
+                  <a href="#" class="qrcodelink">
+                    <img src="./images/Qrcode 1.png" alt="qrcode" ">
+                  </a>
+                </div>
+                <div class="appstore">
+                  <a href="#" class="qrcodelink">
+                    <img
+                      src="./images/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
+                      alt="qrcode"
+                    />
+                  </a>
+                  <a href="#" class="qrcodelink">
+                    <img src="./images/download-appstore.png" alt="qrcode" />
+                  </a>
+                </div>
+              </div>
+              <div class="contactlinks">
+                <a href="#" class="contactlink">
+                  <svg>
+                    <use href="#twitter"></use>
+                  </svg>
+                </a>
+                <a href="#" class="contactlink">
+                  <svg>
+                    <use href="#instagram"></use>
+                  </svg>
+                </a>
+                <a href="#" class="contactlink">
+                  <svg>
+                    <use href="#linkden"></use>
+                  </svg>
+                </a>
+                <a href="#" class="contactlink">
+                  <svg>
+                    <use href="#facebook"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/swiper.js"></script>
+    <script src="scripts/app.js" type="module"></script>
+    <script src="/components/index.js" type="module"></script>
+  </body>
+</html>
