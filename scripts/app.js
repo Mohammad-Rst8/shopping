@@ -9,6 +9,7 @@ const headerMenuItem = document.querySelectorAll('.header-menu__item-product')
 const mobileTopbar = document.querySelector('.mobile-topbar')
 const topBarSearchInput = document.querySelector('.top-bar--search__input')
 const searchbarMenu = document.querySelector('.searchbar-menu')
+const arrivalLink = document.querySelectorAll(".arrival-link");
 
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 if (!getlocalstorage("user")) {
@@ -39,15 +40,25 @@ xicon.addEventListener('click', () =>{
  headerMenuItem.forEach( item => {
   item.addEventListener('click' , (e) =>{
     e.preventDefault()
-    localStorage.removeItem("menuItem")
-    localStorage.removeItem("menuItemChild")
-    localStorage.setItem('menuItem',e.target.parentElement.dataset.cat)
-    localStorage.setItem('menuItemChild',e.target.parentElement.title)
-    window.location.href = "../products.html"
+    setAndGetProductPage(e)
     
   })
 })
 
+arrivalLink.forEach( item =>{
+  item.addEventListener('click', e =>{
+    e.preventDefault()
+    console.log(e.target.parentElement.dataset.cat);
+    setAndGetProductPage(e)
+  })
+})
+const setAndGetProductPage = (e) =>{
+  localStorage.removeItem("menuItem")
+  localStorage.removeItem("menuItemChild")
+  localStorage.setItem('menuItem',e.target.parentElement.dataset.cat)
+  localStorage.setItem('menuItemChild',e.target.parentElement.title)
+  window.location.href = "../products.html"
+}
 topBarSearchInput.addEventListener('keydown', async(e) => {
  
   
