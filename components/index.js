@@ -85,7 +85,7 @@ const loadSpecialSale = async (data) => {
         "beforeend",
         `
               <div class="swiperproduct-slide">
-                $ creatProduct(product)}
+                ${creatProduct(product)}
               </div>
               `
       );
