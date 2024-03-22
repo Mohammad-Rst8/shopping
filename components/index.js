@@ -8,6 +8,10 @@ import {
 
 const viewAllSpecial = document.querySelector("#view-all__special");
 const viewAllBest = document.querySelector("#view-all__best");
+const swiperproductWrapper = document.querySelector(".swiperproduct-wrapper");
+const swiperproduct = document.querySelector(".swiperproduct");
+const pageinationArrowRight = document.querySelector(".pageination-arrow__right");
+const pageinationArrowLeft = document.querySelector(".pageination-arrow__left");
 
 window.addEventListener("load", async () => {
  
@@ -48,6 +52,7 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+
 const loadBannerImages = async() => {
   let swiperWrapper = document.querySelector(".swiper-wrapper");
 
@@ -77,11 +82,9 @@ const loadBannerImages = async() => {
 };
 
 const loadSpecialSale = async (data) => {
-  const swiperWrapper = document.querySelector(".swiperproduct-wrapper");
-
-  await data.forEach((product) => {
+await data.forEach((product) => {
     if (product.specialSales == "yes") {
-      swiperWrapper.insertAdjacentHTML(
+      swiperproductWrapper.insertAdjacentHTML(
         "beforeend",
         `
               <div class="swiperproduct-slide">
@@ -139,3 +142,17 @@ let papularProductImg = document.querySelector(".papular-product__img")
       papularProductImg.setAttribute('src', data[0].image)
     })
 }
+
+pageinationArrowRight.addEventListener("click" , (e) =>{
+  let elem = (parseFloat(swiperproductWrapper.style.right)) || 0
+ if(Math.abs(elem) > 10){
+   swiperproductWrapper.style.right = (elem + 100) + 'px'
+ }
+})
+pageinationArrowLeft.addEventListener("click" , (e) =>{
+  let fit = swiperproductWrapper.clientWidth - swiperproduct.clientWidth
+  let elem = (parseFloat(swiperproductWrapper.style.right)) || 0
+ if(fit > Math.abs(elem)){
+   swiperproductWrapper.style.right = (elem - 100) + 'px' 
+  }
+})

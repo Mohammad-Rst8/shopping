@@ -55,7 +55,9 @@ height: 2rem;
     font-family: dana;
 }
 
-
+.Subtotal-price__all{
+    font-weight: bold;
+}
 .Final-registration{
     display: flex;
     align-items: start;
@@ -68,9 +70,9 @@ height: 2rem;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    
-    
-    
+    position: relative;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .copon-input{ 
@@ -128,7 +130,17 @@ height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    width: 100%;
+   
+}
+.product-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
     box-shadow: 0px 4px 3px #70707042;
     width: 100%;
     margin-bottom: 1.2rem;
@@ -137,9 +149,10 @@ height: 2rem;
 .products-mobile__right{
     display: flex;
     align-items: center;
-    justify-content: center;
+    height: 100%;
+    justify-content: space-between;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 .number-box{
     display: flex;
@@ -167,9 +180,9 @@ height: 2rem;
     font-family: dana;
 }
 .products-mobile__image{
-width: 8rem;
+width: 9rem;
 
-height: 7rem;
+height: 9rem;
 }
 .products-mobile__left{
     width: 100%;
@@ -177,10 +190,77 @@ height: 7rem;
 }
 .products-mobile__detail{
     display: flex;
-    margin: 6.2rem 0 0 0;
+    margin: 3rem 0 0 0;
     align-items: center;
+   
     justify-content: space-between;
+   
 }
 .product-name{
     font-weight: bold;
+}
+.product-colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.product-color{
+width: 2.4rem;
+height: 2.4rem;
+
+outline: 0.5px solid #353535; 
+border-radius: 50%;
+padding: 0.3rem;
+border: 1px solid #fff;
+}
+.product-colors .active {
+    outline: 2.5px solid #ff0000; 
+}
+
+.colors-wrapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-left: 1.3rem;
+}
+.product-sizes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.size-wrapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.product-size{
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+  user-select: none;
+}
+.size-wrapp .active{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.product-option{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+.result-copon{
+    position: absolute;
+    top: 5rem;
+    
 }

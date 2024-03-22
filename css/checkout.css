@@ -54,4 +54,8 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+font-family: dana;
+}
+.content-title{
+    font-family: dana;
 }

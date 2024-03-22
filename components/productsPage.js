@@ -2,23 +2,26 @@ import { getAndShowProductsMenu } from "./functions/funcs.js";
 import { swalfire } from "./functions/funcs.js";
 import { creatProduct } from "./functions/funcs.js";
 const productPageWrapper = document.getElementById('productPage-wrapper')
+const coursesTopBarSelectionTitle = document.querySelector('.coursesTopBarSelectionTitle__content')
+const coursesTopBarSelectionItem = document.querySelectorAll('.courses-top-bar__selection-item')
 
 
 
 window.onload = async() =>{
-  
-  (await checkSpecial()) ? await checkSpecial() :(await checkBest()) ? await checkBest() :( await loadProducts())
+  const items = await getAndShowProductsMenu()
+  checkSpecial(items)? checkSpecial(items) : checkBest(items) ?  checkBest(items) :  loadProducts(items)
 
 
+    sorting(items)
 
 
 }
 
-const loadProducts = async() =>{
+const loadProducts = (items) =>{
 const titlemenu = localStorage.getItem('menuItem')
 const titlemenuChild = localStorage.getItem('menuItemChild')
 
-let items = await getAndShowProductsMenu()
+
 let itemsChild = []
 let itemsParent = []
 
@@ -45,7 +48,13 @@ if(itemsChild.length){
   return;
 }
 else{
-  loadproductinPage([])
+  if(!titlemenu && !titlemenuChild){
+    loadproductinPage(items)
+
+  }else{
+
+    loadproductinPage([])
+  }
   return;
 }
 
@@ -53,9 +62,10 @@ else{
 
 }
 
- const loadproductinPage = async(items) =>{
+ const loadproductinPage = (items) =>{
+  productPageWrapper.innerHTML = ""
 if(items.length){
-  await items.forEach((product) =>{
+   items.forEach((product) =>{
     
       productPageWrapper.insertAdjacentHTML('beforeend', 
           `
@@ -73,11 +83,11 @@ if(items.length){
 }
 }
 
-const checkSpecial = async () =>{
+const checkSpecial =  (data) =>{
   const localStore = localStorage.getItem("special")
  
   if(localStore){
-    const data = await getAndShowProductsMenu()
+    
     data.forEach(item =>{
       if(item.specialSales == "yes"){
         
@@ -95,11 +105,11 @@ const checkSpecial = async () =>{
 }
 
 
-const checkBest = async () =>{
+const checkBest =  (data) =>{
   const localStore = localStorage.getItem("best")
  
   if(localStore){
-    const data = await getAndShowProductsMenu()
+    
     let arr = data.sort((a,b) => b.Remainingnumber - a.Remainingnumber)
             
           
@@ -118,6 +128,34 @@ const checkBest = async () =>{
     return true
   }
 }
-const showdetails = id =>{
-  console.log(id);
+
+const sorting = (items) =>{
+  coursesTopBarSelectionItem.forEach(item =>{
+    item.addEventListener("click" , () =>{
+      coursesTopBarSelectionItem.forEach(part =>{
+        part.classList.remove("courses-top-bar__selection-item--active")
+      })
+      item.classList.add("courses-top-bar__selection-item--active")
+      coursesTopBarSelectionTitle.textContent = item.innerHTML
+      
+      sortdata(items, item.value)
+    })
+  })
+}
+const sortdata = (items, val) =>{
+  if(val == 0){
+    loadproductinPage(items)
+  }
+  else if(val ==1){
+        const sortExpensive = items.toSorted((a,b) => b.price - a.price)
+        loadproductinPage(sortExpensive)
+  }
+  else if(val ==2){
+    const sortExpensive = items.toSorted((a,b) => a.price - b.price)
+    loadproductinPage(sortExpensive)
+  }
+  else if(val ==3){
+    const sortExpensive = items.toSorted((a,b) => b.rate - a.rate)
+    loadproductinPage(sortExpensive)
+  }
 }

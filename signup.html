@@ -12,6 +12,9 @@
     <title>sign-up</title>
 </head>
 <body>
+
+
+
     <svg style="display: none">
         <symbol id="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -122,15 +125,13 @@
         
       </svg>
 
-
-
       <header>
         <div class="top-bar">
           <div class="container-fluid">
             <div class="top-bar__content flex-md-row">
               <div class="top-bar__right flex-md-row">
                 <h1>
-                  <a href="/index.html">آنلاین شاپ</a>
+                  <a href="index.html" >آنلاین شاپ</a>
                 </h1>
                 <div class="top-bar__search">
                   <button type="button" class="top-bar--search__btn" title="button">
@@ -143,54 +144,37 @@
                     placeholder="جستجو"
                     class="top-bar--search__input"
                   />
+                  <div>
+                    <div class="searchbar-menu ">
+                     
+                     
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="top-bar__left">
                 <div class="top-bar--buy">
-                  <button type="button" class="btn" title="button">
+                  <a href="cart.html" class="btn " title="basket">
                     <svg class="arrow">
                       <use href="#buy-icon"></use>
                     </svg>
-                  </button>
+                  </a>
                 </div>
                 <div class="top-bar--profile">
-                  <button type="button" class="btn" title="button">
+                  <div  class="btn" title="dropDown">
                     <svg class="arrow">
                       <use href="#profile-icon"></use>
                     </svg>
-                  </button>
+                  </div>
                   <div class="dropdown-profile">
                     <ul class="dropdown-profile__menu">
                       <li class="dropdown-profile__menu--item">
-                        <a
-                          href="account managment.html"
-                          class="dropdown-profile__menu--link"
-                        >
-                          <svg>
-                            <use href="#profile-icon"></use>
-                          </svg>
-                          <p>مدیریت اکانت</p>
-                        </a>
-                      </li>
-                      <li class="dropdown-profile__menu--item">
-                        <a href="#" class="dropdown-profile__menu--link">
-                          <svg>
-                            <use href="#myorder"></use>
-                          </svg>
-                          <p>گزارشات خرید</p>
-                        </a>
-                      </li>
-                      <li class="dropdown-profile__menu--item">
-                        <button
-                          type="submit"
-                          class="dropdown-profile__menu--link"
-                          id="logout-btn"
-                        >
-                          <svg>
-                            <use href="#logout"></use>
-                          </svg>
-                          <p>خروج از حساب</p>
-                        </button>
+                        <a href="signup.html" class="dropdown-profile__menu--link">
+                            <svg>
+                              <use href="#profile-icon"></use>
+                            </svg>
+                            <p>ورود | ثبت نام</p>
+                      </a>
                       </li>
                     </ul>
                   </div>
@@ -207,7 +191,7 @@
             <div class="main-header__right d-md-block">
               <ul class="main-header__menu fs-5">
                 <li class="header-menu__item header-menu__item-product" data-cat="women">
-                  <a href="#" class="header-menu_item_link">
+                  <a href="javascript:void(0)" class="header-menu_item_link ">
                     زنانه
                     <svg>
                       <use href="#chevrown-down"></use>
@@ -277,7 +261,7 @@
                   <a href="#" class="header-menu_item_link"> موادغذایی </a>
                 </li>
                 <li class="header-menu__item header-menu__item-product" data-cat="healthy">
-                  <a href="#" class="header-menu_item_link"> سلامت و زیبایی </a>
+                  <a href="javascript:void(0)" class="header-menu_item_link "> سلامت و زیبایی </a>
                 </li>
               </ul>
             </div>
@@ -360,12 +344,13 @@
                 <a href="#" class="header-menu_item_link"> موادغذایی </a>
               </li>
               <li class="header-mobile__menu-item" data-cat="healthy">
-                <a href="#" class="header-menu_item_link"> سلامت و زیبایی </a>
+                <a href="#" class="header-menu_item_link onShop"> سلامت و زیبایی </a>
               </li>
             </ul>
           </div>
         </div>
       </header>
+    
   
   
         <main>
@@ -487,8 +472,9 @@
           </div>
         </div>
       </footer>
+ 
       <script src="scripts/sweetalert2@11.js"></script>
-      <script src="./components/auth/signup/signup.js" type="module"></script>
       <script src="./scripts/app.js" type="module"></script>
+      <script src="./components/auth/signup/signup.js" type="module"></script>
 </body>
 </html>

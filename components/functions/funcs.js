@@ -173,4 +173,20 @@ const showdetails =async id =>{
   localStorage.setItem('product', JSON.stringify(product))
   
 }
+
+// const closesectionByClickedOutside = (elem) =>{
+//   window.addEventListener("click", (e) =>{
+//   console.log(elem);
+//   if(e.target != elem){
+//     elem.style.display ="none"
+//   }
+//   else{
+//     console.log("نیست");
+//   }
+// })
+
+
+
+
+//}
 export {clearInputs , produceUserID, setLocalstorage ,swalfire ,checkinputs, getlocalstorage, isLogin, logout,timerspecial , getAndShowProductsMenu,creatProduct , searchInputInProduct,showSpecialSales,showdetails};

@@ -1,25 +1,88 @@
-
+import { isLogin , swalfire,getlocalstorage } from "../functions/funcs.js"
 const productName = document.querySelector(".product-name")
+const commentsWrapper = document.querySelector(".comments-wrapper")
+const commentWrapper = document.querySelector(".comment-wrapper")
 const productDatails= document.querySelector(".product-datails")
+const addCommentBtn= document.querySelector("#add-comment__btn")
+const pageinationArrowLeft= document.querySelector(".pageination-arrow__left")
+const pageinationArrowRight= document.querySelector(".pageination-arrow__right")
 
 
-window.onload = async() =>{
-    const product = JSON.parse(localStorage.getItem("product"))
 
+
+window.addEventListener("load" , async() =>{
+
+
+  
+    const product =await JSON.parse(localStorage.getItem("product"))
+     
    await insertDetails(product)
    await insertColorWrapp(product)
    await clickChangeProductColor()
    await insertSizeWrapp(product)
    await clickChangeSize()
    await changenumberproduct(product)
+   await addComment(product)
+   
+})
 
+
+
+
+
+const insertDetails = async (product) =>{
+  console.log("ok");
+const commentsWrapper = document.querySelector(".comment-wrapper")
+ const data = await fetch('https://uqkfskiduursccnhissi.supabase.co/rest/v1/comments?select=*', {
+  headers :{
+    "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+   
+  }
+}).then(res => res.json())
+.then(data =>{ 
+return data;
 }
+)
+const comments = data.filter(comment =>{
+  return comment.productId == product.id
+})
+comments.forEach(item =>{
+  let today = new Date(item.created_at.slice(0, 10)).toLocaleDateString('fa-IR');
+  
+  commentsWrapper.insertAdjacentHTML('beforeend', 
+  `
+ 
+
+  
+   
+    
+      <div class="comment-slide">
+        <h5 class="comment-title">
+          ${item.title}
+          <p class="user-rate">
+            (<span class="user-rating">${item.rate}</span>) از 5
+          </p>
+        </h5>
+        <p class="comment-subtitle">
+         ${item.description}
+        </p>
+        <div class="comment-detail">
+          <p class="comment-date">${today}</p>
+          <p class="username-comment__send">(${item.username})</p>
+        </div>
+      </div>
+
+    
+ 
+
+  `)
+})
 
 
 
 
 
-const insertDetails = (product) =>{
+
    productDatails.insertAdjacentHTML('beforeend' , 
   `
   <div class="details flex-column-reverse flex-md-row">
@@ -76,7 +139,7 @@ const insertDetails = (product) =>{
                   <use href="#minus"></use>
                 </svg>
               </div>
-              <a href="#" class="buttons">افزودن به سبد خرید</a>
+              <a href="#" class="buttons" id="add-to__cart--btn">افزودن به سبد خرید</a>
             </div>
           </div>
           <div class="details-left">
@@ -89,19 +152,22 @@ const insertDetails = (product) =>{
             </div>
           </div>
         </div>
+
         `
          
   )
+const addToCartBtn = document.querySelector("#add-to__cart--btn")
+await addtocart(product,addToCartBtn)
 }
 const insertColorWrapp = (product) =>{
-const colorsWrapp = document.querySelector(".colors-wrapp")
+  const colorsWrapp = document.querySelector(".colors-wrapp")
 product.color.forEach(color =>{
 
  
 colorsWrapp.insertAdjacentHTML("beforeend", 
 `
 ${
-  color == "blue" ? `<span class="product-color  bg-primary"> </span>` : color == "green" ? `<span class="product-color bg-success"> </span>`  : color == "white" ? `<span class="product-color  bg-white"> </span>` : `<span class="product-color  bg-dark"> </span>` 
+  color == "blue" ? `<span class="product-color  bg-primary" bg="blue"> </span>` : color == "green" ? `<span class="product-color bg-success" bg="green"> </span>`  : color == "white" ? `<span class="product-color  bg-white" bg="white"> </span>` : `<span class="product-color  bg-dark" bg="dark"> </span>` 
 }
 `)
 
@@ -147,8 +213,6 @@ productColors.forEach(color =>{
 }
 
 
-
-
 const changenumberproduct = (product) =>{
 const productMobileNumber = document.querySelector('.product-mobile__number')
 const plusNumberProduct = document.querySelector(".plus-number__product")
@@ -165,3 +229,173 @@ minusNumberProduct.addEventListener('click', () =>{
 
   
 }
+const addComment = (product)  => {
+const plus = document.querySelector(".pluss")
+    const minus = document.querySelector(".minuss")
+    const productMobileNumberr = document.querySelector(".product-mobile__numberr")
+let productRateNumber = +productMobileNumberr.innerHTML
+    plus.addEventListener('click', () =>{
+    console.log(productRateNumber);
+    productRateNumber == 5 ? productMobileNumberr.innerHTML = 5 : productMobileNumberr.innerHTML = ++productRateNumber
+  })
+
+
+
+
+  minus.addEventListener('click', () =>{
+    
+    productRateNumber == 1 ? productMobileNumberr.innerHTML = 1 : productMobileNumberr.innerHTML = --productRateNumber
+  })
+
+  
+  addCommentBtn.addEventListener("click" , () =>{
+    const rate = +productMobileNumberr.innerHTML
+  const addCommentInputTitle = document.querySelector("#add-comment__input-title").value
+  const addCommentInputUsername = document.querySelector("#add-comment__input-username").value
+  const addCommentDescription = document.querySelector("#add-comment--description").value
+  postComment(product.id,addCommentInputTitle,addCommentInputUsername,addCommentDescription,rate)
+   
+  })
+
+}
+const postComment = async (id, title,username,desc,rate) =>{
+
+const arr = {
+ 
+  productId : id
+  ,title : title
+  , username : username
+  ,description : desc,
+  rate: rate 
+  
+}
+console.log(arr);
+await fetch(`https://uqkfskiduursccnhissi.supabase.co/rest/v1/comments`, {
+method: "POST",
+headers: {
+  "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+  "Content-Type": "application/json",
+  
+},
+body : JSON.stringify(arr)
+}).then(res => console.log(res))
+
+
+}
+
+const commentSlider = document.querySelector(".comment-slider")
+pageinationArrowLeft.addEventListener("click" , () =>{
+  console.log("ok");
+  let fit = commentWrapper.clientWidth - commentSlider.clientWidth
+  let elem = (parseFloat(commentWrapper.style.right)) || 0
+ if(fit > Math.abs(elem)){
+  commentWrapper.style.right = (elem - 120) + 'px' 
+  }
+})
+pageinationArrowRight.addEventListener("click" , () =>{
+ 
+  let elem = (parseFloat(commentWrapper.style.right)) || 0
+ if(10 < Math.abs(elem)){
+  commentWrapper.style.right = (elem + 120) + 'px' 
+  }
+})
+
+const addtocart = async(product, addToCartBtn) =>{
+  addToCartBtn.addEventListener("click", () =>{
+    
+    if(!isLogin()){
+      swalfire("لطفا وارد حساب کاربری شوید.", "برای خرید باید وارد حساب شده باشید.","error")
+       setTimeout( () => {
+
+        window.location.href = "../../signup.html"
+      },2000)
+      return;
+    }
+      checkOptionsProduct(product.price, product.name,product.mainimage, product.Remainingnumber)
+
+
+
+  })
+}
+
+
+const checkOptionsProduct = async(price, name,img , numberInShop) =>{
+
+  const colorsWrapp = document.querySelector(".colors-wrapp").getElementsByClassName("product-color")
+  const sizeWrapp = document.querySelector('.size-wrapp').getElementsByClassName("product-size")
+  let productMobileNumberr = document.querySelector(".product-mobile__number")
+  let productColor = await checkColorSelect(colorsWrapp)
+  let productSize = await checkSizeSelect(sizeWrapp)
+  if(productColor){
+    productColor = productColor.getAttribute("bg")
+  }
+  else{
+    swalfire("رنگ کالای مورد نظر را انتخاب کنید", "" , "warning")
+    return;
+  }
+  if(productSize){
+    productSize = productSize.innerHTML
+  }
+  else{
+    swalfire("سایز کالای مورد نظر را انتخاب کنید", "" , "warning")
+    return;
+  }
+  productMobileNumberr = +productMobileNumberr.textContent
+    const userd = getlocalstorage('user')
+
+const arr= {
+  name: name,
+  userid : userd,
+  color : productColor, 
+  size: productSize,
+  price : +price,
+  number: productMobileNumberr,
+  image : img,
+  numberInShop : numberInShop
+}
+    await sendDatas(arr)
+
+}
+
+const checkColorSelect =async (elem) =>{
+  let productColor
+  for (const x of elem) {x.classList.contains("active") ? productColor = x : "" ;}
+    return productColor
+}
+
+const checkSizeSelect =async (sizeWrapp) =>{
+  let sizeColor
+  for (const x of sizeWrapp) {x.classList.contains("active") ? sizeColor = x : "" ;}
+    return sizeColor
+}
+
+const  sendDatas = async (arr) =>{
+  console.log(arr);
+  await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/userBaskets", {
+    method : "POST",
+    headers: {
+      "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+      "Content-Type": "application/json",
+      
+    },
+    body : JSON.stringify(arr)
+  }).then (res =>{
+    console.log(res);
+    window.location.href = "../../cart.html" 
+    
+  })
+}
+
+const addCommentFirstBtn = document.querySelector("#add-comment__first--btn")
+const addCommentt = document.querySelector(".addcomment")
+const removeAddcomment = document.querySelector(".remove-addcomment")
+
+addCommentFirstBtn.addEventListener("click", (e) =>{
+  console.log("ok");
+e.preventDefault()
+addCommentt.classList.remove("d-none")
+})
+
+removeAddcomment.addEventListener("click", () =>{
+  addCommentt.classList.add("d-none")
+})
