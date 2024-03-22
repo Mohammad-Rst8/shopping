@@ -1,12 +1,12 @@
 import { isLogin , swalfire,getlocalstorage } from "../functions/funcs.js"
-const productName = document.querySelector(".product-name")
-const commentsWrapper = document.querySelector(".comments-wrapper")
 const commentWrapper = document.querySelector(".comment-wrapper")
 const productDatails= document.querySelector(".product-datails")
 const addCommentBtn= document.querySelector("#add-comment__btn")
 const pageinationArrowLeft= document.querySelector(".pageination-arrow__left")
 const pageinationArrowRight= document.querySelector(".pageination-arrow__right")
-
+const addCommentFirstBtn = document.querySelector("#add-comment__first--btn")
+const addCommentt = document.querySelector(".addcomment")
+const removeAddcomment = document.querySelector(".remove-addcomment")
 
 
 
@@ -31,8 +31,8 @@ window.addEventListener("load" , async() =>{
 
 
 const insertDetails = async (product) =>{
-  console.log("ok");
-const commentsWrapper = document.querySelector(".comment-wrapper")
+  
+
  const data = await fetch('https://uqkfskiduursccnhissi.supabase.co/rest/v1/comments?select=*', {
   headers :{
     "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
@@ -49,7 +49,7 @@ const comments = data.filter(comment =>{
 comments.forEach(item =>{
   let today = new Date(item.created_at.slice(0, 10)).toLocaleDateString('fa-IR');
   
-  commentsWrapper.insertAdjacentHTML('beforeend', 
+  commentWrapper.insertAdjacentHTML('beforeend', 
   `
  
 
@@ -235,7 +235,7 @@ const plus = document.querySelector(".pluss")
     const productMobileNumberr = document.querySelector(".product-mobile__numberr")
 let productRateNumber = +productMobileNumberr.innerHTML
     plus.addEventListener('click', () =>{
-    console.log(productRateNumber);
+    
     productRateNumber == 5 ? productMobileNumberr.innerHTML = 5 : productMobileNumberr.innerHTML = ++productRateNumber
   })
 
@@ -256,7 +256,7 @@ let productRateNumber = +productMobileNumberr.innerHTML
   postComment(product.id,addCommentInputTitle,addCommentInputUsername,addCommentDescription,rate)
    
   })
-
+  addCommentt.classList.add("d-none")
 }
 const postComment = async (id, title,username,desc,rate) =>{
 
@@ -269,7 +269,7 @@ const arr = {
   rate: rate 
   
 }
-console.log(arr);
+
 await fetch(`https://uqkfskiduursccnhissi.supabase.co/rest/v1/comments`, {
 method: "POST",
 headers: {
@@ -278,14 +278,14 @@ headers: {
   
 },
 body : JSON.stringify(arr)
-}).then(res => console.log(res))
+})
 
 
 }
 
 const commentSlider = document.querySelector(".comment-slider")
 pageinationArrowLeft.addEventListener("click" , () =>{
-  console.log("ok");
+  
   let fit = commentWrapper.clientWidth - commentSlider.clientWidth
   let elem = (parseFloat(commentWrapper.style.right)) || 0
  if(fit > Math.abs(elem)){
@@ -363,14 +363,14 @@ const checkColorSelect =async (elem) =>{
     return productColor
 }
 
-const checkSizeSelect =async (sizeWrapp) =>{
+const checkSizeSelect = async (sizeWrapp) =>{
   let sizeColor
   for (const x of sizeWrapp) {x.classList.contains("active") ? sizeColor = x : "" ;}
     return sizeColor
 }
 
 const  sendDatas = async (arr) =>{
-  console.log(arr);
+ 
   await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/userBaskets", {
     method : "POST",
     headers: {
@@ -380,18 +380,16 @@ const  sendDatas = async (arr) =>{
     },
     body : JSON.stringify(arr)
   }).then (res =>{
-    console.log(res);
+  
     window.location.href = "../../cart.html" 
     
   })
 }
 
-const addCommentFirstBtn = document.querySelector("#add-comment__first--btn")
-const addCommentt = document.querySelector(".addcomment")
-const removeAddcomment = document.querySelector(".remove-addcomment")
+
 
 addCommentFirstBtn.addEventListener("click", (e) =>{
-  console.log("ok");
+  
 e.preventDefault()
 addCommentt.classList.remove("d-none")
 })
