@@ -129,7 +129,7 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.href= "shopping/product-detail.html"
+      window.location.href= "/product-detail.html"
 })
      
    })
