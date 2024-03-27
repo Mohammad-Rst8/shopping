@@ -140,7 +140,7 @@ comments.forEach(item =>{
                   <use href="#minus"></use>
                 </svg>
               </div>
-              <a href="#" class="buttons" id="add-to__cart--btn">افزودن به سبد خرید</a>
+              <a href="cart.html" class="buttons" id="add-to__cart--btn">افزودن به سبد خرید</a>
             </div>
           </div>
           <div class="details-left">
