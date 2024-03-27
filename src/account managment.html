@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/404.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/account.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
     <title>Document</title>
 </head>
 <body>
+
+  
 
     <svg style="display: none">
         <symbol id="plus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" >
@@ -188,7 +190,7 @@
           <div class="top-bar__content flex-md-row">
             <div class="top-bar__right flex-md-row">
               <h1>
-                <a href="index.html" >آنلاین شاپ</a>
+                <a href="../index.html" >آنلاین شاپ</a>
               </h1>
               <div class="top-bar__search">
                 <button type="button" class="top-bar--search__btn" title="button">
@@ -211,7 +213,7 @@
             </div>
             <div class="top-bar__left">
               <div class="top-bar--buy">
-                <a href="cart.html" class="btn " title="basket">
+                <a href="/cart.html" class="btn " title="basket">
                   <svg class="arrow">
                     <use href="#buy-icon"></use>
                   </svg>
@@ -226,7 +228,7 @@
                 <div class="dropdown-profile">
                   <ul class="dropdown-profile__menu">
                     <li class="dropdown-profile__menu--item">
-                      <a href="signup.html" class="dropdown-profile__menu--link">
+                      <a href="/signup.html" class="dropdown-profile__menu--link">
                           <svg>
                             <use href="#profile-icon"></use>
                           </svg>
@@ -238,7 +240,7 @@
               </div>
               <div class="d-block d-md-none">
                 <button type="button" class="btn" id="menubtn" title="button">
-                  <svg class="arrow">
+                  <svg class="arrow " id="svgMenuButton">
                     <use href="#menu"></use>
                   </svg>
                 </button>
@@ -409,20 +411,34 @@
     </header>
   
   
+  
 
-
-
-      <main>
+    <main>
         <div class="container">
-            <div class="eror-wrapp">
-                <h1>404 Not found</h1>
-                <p>صفحه بازدید شده شما یافت نشد. می توانید به صفحه اصلی بروید.
-                </p>
-                <a href="index.html" class="buttons ">بازگشت به فروشگاه</a>
+            <h2 class="account-title text-center text-md-end">ویرایش حساب کاربری</h2>
+            <div class="account">
+                <form method="post" id="account-edit-form">
+                    <div class="account-name flex-column flex-md-row align-items-start gap-0">
+                        <input type="text" placeholder="نام..." class="account-firstname">
+                        <input type="text" placeholder="نام خانوادگی..." class="account-lastname">
+                    </div>
+                    <div class="account-password flex-column flex-md-row align-items-start gap-0">
+                        <input type="password" placeholder="رمز جدید..." id="new-password">
+                        <input type="password" id="new-password__confirm" placeholder="رمز جدید را مجددا وارد کنید...">
+                    </div>
+                    <input type="email" required name="user-email" class="account-email" placeholder="ایمیل خود را وارد کنید...">
+                    <input type="text" required name="user-phone" class="account-phone" placeholder="شماره تماس خود را وارد کنید...">
+                    <input type="text" required name="user-address" class="account-address" placeholder="آدرس خود را وارد کنید...">
+
+                </form>
+                <button type="submit" value="submit" form="account-edit-form" class="buttons" id="change-userInfo">ذخیره تغییرات</button>
             </div>
         </div>
-      </main>
- <footer>
+    </main>
+    
+
+
+   <footer>
         <div class="container-fluid">
           <div class="container">
             <div class="footerelems flex-column flex-md-row">
@@ -469,18 +485,18 @@
                 <div class="appstores">
                   <div class="qrcode">
                     <a href="#" class="qrcodelink">
-                      <img src="./images/Qrcode 1.png" alt="qrcode" ">
+                      <img src="../images/Qrcode 1.png" alt="qrcode" ">
                     </a>
                   </div>
                   <div class="appstore">
                     <a href="#" class="qrcodelink">
                       <img
-                        src="./images/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
+                        src="../images/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo.png"
                         alt="qrcode"
                       />
                     </a>
                     <a href="#" class="qrcodelink">
-                      <img src="./images/download-appstore.png" alt="qrcode" />
+                      <img src="../images/download-appstore.png" alt="qrcode" />
                     </a>
                   </div>
                 </div>
@@ -511,8 +527,10 @@
           </div>
         </div>
       </footer>
-
-
-      <script src="scripts/app.js"></script>
+ 
+      
+      <script src="../scripts/sweetalert2@11.js"></script>
+      <script src="../scripts/app.js" type="module"></script>
+    <script src="../components/accoun-managment/manage.js" type="module"></script>
 </body>
 </html>
