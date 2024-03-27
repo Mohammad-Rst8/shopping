@@ -20,6 +20,7 @@ window.addEventListener("load" , async() =>{
    await insertColorWrapp(product)
    await clickChangeProductColor()
    await insertSizeWrapp(product)
+   await insertSubImageWrapp(product)
    await clickChangeSize()
    await changenumberproduct(product)
    await addComment(product)
@@ -143,12 +144,9 @@ comments.forEach(item =>{
             </div>
           </div>
           <div class="details-left">
-            <img src="./images/camera.png" alt="" class="main-image" />
+            <img src="${product.mainimage}" alt="main" class="main-image" />
             <div class="slides">
-              <img src="./images/jacket 1.png" alt="" class="image-slide" />
-              <img src="./images/jacket 1.png" alt="" class="image-slide" />
-              <img src="./images/jacket 1.png" alt="" class="image-slide" />
-              <img src="./images/jacket 1.png" alt="" class="image-slide" />
+             
             </div>
           </div>
         </div>
@@ -167,7 +165,7 @@ product.color.forEach(color =>{
 colorsWrapp.insertAdjacentHTML("beforeend", 
 `
 ${
-  color == "blue" ? `<span class="product-color  bg-primary" bg="blue"> </span>` : color == "green" ? `<span class="product-color bg-success" bg="green"> </span>`  : color == "white" ? `<span class="product-color  bg-white" bg="white"> </span>` : `<span class="product-color  bg-dark" bg="dark"> </span>` 
+  color == "blue" ? `<span class="product-color  bg-primary" bg="blue"> </span>` : color == "green" ? `<span class="product-color bg-success" bg="green"> </span>`  : color == "white" ? `<span class="product-color  bg-white" bg="white"> </span>` : color == "dark" ? `<span class="product-color  bg-dark" bg="dark"> </span>` :  color == "red" ? `<span class="product-color  bg-danger" bg="red"> </span>` : ""
 }
 `)
 
@@ -178,9 +176,10 @@ const insertSizeWrapp = (product) =>{
   const sizeWrapp = document.querySelector('.size-wrapp')
 
 product.sizes.forEach(item =>{
+ 
   sizeWrapp.insertAdjacentHTML('beforeend' , 
   ` 
-  <span class="product-size ">${item}</span>
+  <span class="product-size ">${item == true ? item : "ندارد"}</span>
   `)
 })
 }
@@ -280,7 +279,7 @@ headers: {
 body : JSON.stringify(arr)
 })
 
-
+addCommentt.classList.add("d-none")
 }
 
 const commentSlider = document.querySelector(".comment-slider")
@@ -307,7 +306,7 @@ const addtocart = async(product, addToCartBtn) =>{
       swalfire("لطفا وارد حساب کاربری شوید.", "برای خرید باید وارد حساب شده باشید.","error")
        setTimeout( () => {
 
-        window.location.href = "../../signup.html"
+        window.location.href = "/signup.html"
       },2000)
       return;
     }
@@ -364,6 +363,7 @@ const checkColorSelect =async (elem) =>{
 }
 
 const checkSizeSelect = async (sizeWrapp) =>{
+
   let sizeColor
   for (const x of sizeWrapp) {x.classList.contains("active") ? sizeColor = x : "" ;}
     return sizeColor
@@ -381,7 +381,7 @@ const  sendDatas = async (arr) =>{
     body : JSON.stringify(arr)
   }).then (res =>{
   
-    window.location.href = "../../cart.html" 
+    window.location.href = "/cart.html" 
     
   })
 }
@@ -397,3 +397,22 @@ addCommentt.classList.remove("d-none")
 removeAddcomment.addEventListener("click", () =>{
   addCommentt.classList.add("d-none")
 })
+
+const insertSubImageWrapp = (product) =>{
+  const slides = document.querySelector(".slides")
+  const items = product.subimages
+ for (let i = 0; i < items.length; i++) {
+  if(items[i]){
+
+    slides.insertAdjacentHTML("beforeend" , 
+    `
+    <img src="${items[i]}" alt="" class="image-slide" />
+    `)
+  }
+  else{
+    return;
+  }
+  
+ }
+ 
+}

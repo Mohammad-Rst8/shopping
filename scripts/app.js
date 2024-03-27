@@ -3,6 +3,7 @@ import { searchInputInProduct } from "../components/functions/funcs.js";
 import { getlocalstorage } from "../components/functions/funcs.js";
 import { getAndShowProductsMenu } from "../components/functions/funcs.js";
 
+
 const menubtn = document.getElementById('menubtn')
 const xicon = document.querySelector('.xicon')
 const headerMenuItem = document.querySelectorAll('.header-menu__item-product')
@@ -14,22 +15,7 @@ const topBarSearchBtn = document.querySelector(".top-bar--search__btn")
 const svgMenuButton = document.querySelector("#svgMenuButton")
 
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
-window.onload =  async() =>{
- 
-   if (await getlocalstorage("user")) {
-    console.log(await getlocalstorage("user"));
-    await dropDownProfileInsertHtml()
-    
 
-    const logoutBtn = document.getElementById('logout-btn')
-    logoutBtn.addEventListener('click', () =>{
-      logout()
-   })
-  }
-
-    
-
-}
 const dropDownProfileInsertHtml = () =>{
   dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
@@ -43,14 +29,7 @@ const dropDownProfileInsertHtml = () =>{
       <p>مدیریت اکانت</p>
     </a>
   </li>
-  <li class="dropdown-profile__menu--item">
-    <a href="report-sell.html" class="dropdown-profile__menu--link ">
-      <svg>
-        <use href="#myorder"></use>
-      </svg>
-      <p>گزارشات خرید</p>
-    </a>
-  </li>
+ 
   <li class="dropdown-profile__menu--item">
     <a
       href="signup.html"
@@ -65,6 +44,22 @@ const dropDownProfileInsertHtml = () =>{
   </li>
       `;
 }
+   if ( getlocalstorage("user")) {
+    
+     dropDownProfileInsertHtml()
+    
+
+    const logoutBtn = document.getElementById('logout-btn')
+    logoutBtn.addEventListener('click', () =>{
+      logout()
+   })
+ 
+
+
+    
+
+}
+
 
 menubtn.addEventListener('click', () =>{
   mobileTopbar.classList.toggle('mobile-menu__active')
@@ -93,17 +88,14 @@ const setAndGetProductPage = (e) =>{
   localStorage.removeItem("menuItemChild")
   localStorage.setItem('menuItem',e.target.parentElement.dataset.cat)
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
-  window.location.href = "../products.html"
+  window.location.href = "/products.html"
 }
 topBarSearchBtn.addEventListener("click", e =>{
   searchProducts(topBarSearchInput.value.trim())
 })
 
 topBarSearchInput.addEventListener('keydown', (e) => {
- 
-  
   e.keyCode == 13 && searchProducts(e.target.value.trim())
-  
 })
 
 const searchProducts = async(value) =>{
@@ -116,7 +108,7 @@ const searchProducts = async(value) =>{
      `
      <a href="../product-detail.html" class="searchbar-menu__item header-menu__item-product" product-id="${item.id}">
      <span class="searchbar-image-part">
-     <img src="./images/children/2/main.webp" alt="image-searchar" width="75" height="75">
+     <img src="${item.mainimage}" alt="image-searchar" width="75" height="75">
     <span>
       <h4>${item.name}</h4>
       <p id="product-cat">${item.subcate ? item.maincate  +"/"+ item.subcate : item.maincate}</p>
@@ -137,7 +129,7 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.href= "../product-detail.html"
+      window.location.href= "/product-detail.html"
 })
      
    })
@@ -160,3 +152,5 @@ if(e.target != mobileTopbar && e.target != svgMenuButton && e.target != menubtn)
 
 
 })
+
+

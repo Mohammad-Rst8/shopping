@@ -75,6 +75,7 @@ const login = () => {
           text: "اطلاعات کاربری خود را به طور صحیح وارد کنید",
           timer: 1500,
         });
+        return;
       }
       clearInputs([signinEmail, signinPass]);
     });

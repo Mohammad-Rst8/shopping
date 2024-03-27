@@ -2,8 +2,10 @@ import {
   timerspecial,
   getAndShowProductsMenu,
   creatProduct,
-  showdetails
+
+  clickproduct
 } from "./functions/funcs.js";
+
 
 
 const viewAllSpecial = document.querySelector("#view-all__special");
@@ -72,6 +74,7 @@ const loadBannerImages = async() => {
                   <img
                     src="${item.address}"
                     alt="${item.title}"
+                    data-cat="${item.maincat}"
                     class="main-header__image"
                   />
                 </div>
@@ -79,8 +82,20 @@ const loadBannerImages = async() => {
         );
       });
     });
+  await  clickBannerImage()
 };
+const clickBannerImage = () =>{
+  const swiperSlide = document.querySelectorAll(".swiper-slide")
+  swiperSlide.forEach(item =>{
+    item.addEventListener("click" , e =>{
+      localStorage.setItem('menuItem',e.target.dataset.cat)
+  
+    window.location.href = "../products.html"
+    
 
+    })
+  })
+}
 const loadSpecialSale = async (data) => {
 await data.forEach((product) => {
     if (product.specialSales == "yes") {
@@ -99,7 +114,9 @@ const loadBestSale = async (data) => {
   const bestSales = document.querySelector("#best-sales");
   let arr = data.sort((a, b) => b.Remainingnumber - a.Remainingnumber);
 
- await arr.forEach((product) => {
+  arr = arr.slice(0 , 15)
+  
+  await arr.forEach((product) => {
     bestSales.insertAdjacentHTML(
       "beforeend",
       `   <div class="col-6 col-md-3">
@@ -117,15 +134,7 @@ viewAllBest.addEventListener("click",  () => {
    localStorage.setItem("best", "yes");
 });
 
-const clickproduct = async () => {
-  const productBox = document.querySelectorAll(".product-box");
-  productBox.forEach((item) => {
-    item.addEventListener("click", async () => {
-      await showdetails(item.getAttribute("user-id"));
-      window.location.href = ".././product-detail.html";
-    });
-  });
-};
+
 
 const loadPopularProduct = async() =>{
 let papularProductTitle = document.querySelector(".papular-product__title")

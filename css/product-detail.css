@@ -92,6 +92,7 @@ border: 1px solid #fff;
     width: 5rem;
     height: 4rem;
     display: flex;
+    margin-left: -1rem;
     align-items: center;
     justify-content: center;
     background-color: var(--secondary-color);

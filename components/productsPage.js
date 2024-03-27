@@ -1,6 +1,6 @@
 import { getAndShowProductsMenu } from "./functions/funcs.js";
 import { swalfire } from "./functions/funcs.js";
-import { creatProduct } from "./functions/funcs.js";
+import { creatProduct , clickproduct } from "./functions/funcs.js";
 const productPageWrapper = document.getElementById('productPage-wrapper')
 const coursesTopBarSelectionTitle = document.querySelector('.coursesTopBarSelectionTitle__content')
 const coursesTopBarSelectionItem = document.querySelectorAll('.courses-top-bar__selection-item')
@@ -11,7 +11,7 @@ window.onload = async() =>{
   const items = await getAndShowProductsMenu()
   checkSpecial(items)? checkSpecial(items) : checkBest(items) ?  checkBest(items) :  loadProducts(items)
 
-
+  await clickproduct();
     sorting(items)
 
 

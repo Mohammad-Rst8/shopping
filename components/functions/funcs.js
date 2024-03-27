@@ -138,9 +138,9 @@ const creatProduct = product =>{
                     <span class="rating-comment-count">(${product.commentsnumber})</span>
                   </div>
                 </div>
-                <a href="product-detail.html" class="add-cart">
+                <button type="button" class="add-cart">
                   <h4>افزودن به سبد خرید</h4>
-                </a>
+                </button>
               </div>`
               return main;
 }
@@ -174,19 +174,21 @@ const showdetails =async id =>{
   
 }
 
-// const closesectionByClickedOutside = (elem) =>{
-//   window.addEventListener("click", (e) =>{
-//   console.log(elem);
-//   if(e.target != elem){
-//     elem.style.display ="none"
-//   }
-//   else{
-//     console.log("نیست");
-//   }
-// })
+
 
 
 
 
 //}
-export {clearInputs , produceUserID, setLocalstorage ,swalfire ,checkinputs, getlocalstorage, isLogin, logout,timerspecial , getAndShowProductsMenu,creatProduct , searchInputInProduct,showSpecialSales,showdetails};
+const clickproduct = async () => {
+  
+  const productBox = document.querySelectorAll(".product-box");
+
+  productBox.forEach((item) => {
+    item.addEventListener("click", async () => {
+      await showdetails(item.getAttribute("user-id"));
+      window.location.href = ".././product-detail.html";
+    });
+  });
+};
+export {clearInputs , produceUserID, setLocalstorage ,swalfire ,checkinputs, getlocalstorage, isLogin, logout,timerspecial , getAndShowProductsMenu,creatProduct , searchInputInProduct,showSpecialSales , clickproduct};
