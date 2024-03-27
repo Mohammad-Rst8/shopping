@@ -381,7 +381,7 @@ const  sendDatas = async (arr) =>{
     body : JSON.stringify(arr)
   }).then (res =>{
   
-    window.location.href = "./cart.html" 
+    window.location.href = "../src/cart.html" 
     
   })
 }
