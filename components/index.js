@@ -90,7 +90,7 @@ const clickBannerImage = () =>{
     item.addEventListener("click" , e =>{
       localStorage.setItem('menuItem',e.target.dataset.cat)
   
-    window.location.href = "../products.html"
+    window.location.href = "/products.html"
     
 
     })
