@@ -306,7 +306,7 @@ const addtocart = async(product, addToCartBtn) =>{
       swalfire("لطفا وارد حساب کاربری شوید.", "برای خرید باید وارد حساب شده باشید.","error")
        setTimeout( () => {
 
-        window.location.href = "signup.html"
+        window.location.href = "./signup.html"
       },2000)
       return;
     }
@@ -381,7 +381,7 @@ const  sendDatas = async (arr) =>{
     body : JSON.stringify(arr)
   }).then (res =>{
   
-    window.location.href = "cart.html" 
+    window.location.href = "./cart.html" 
     
   })
 }
