@@ -147,6 +147,7 @@ if(e.target != mobileTopbar && e.target != svgMenuButton && e.target != menubtn)
 
     mobileTopbar.classList.remove("mobile-menu__active")
   }
+  
 }
 
 
