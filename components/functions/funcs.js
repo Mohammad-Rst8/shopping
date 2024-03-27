@@ -187,7 +187,7 @@ const clickproduct = async () => {
   productBox.forEach((item) => {
     item.addEventListener("click", async () => {
       await showdetails(item.getAttribute("user-id"));
-      window.location.href = ".././product-detail.html";
+      window.location.href = "/product-detail.html";
     });
   });
 };
