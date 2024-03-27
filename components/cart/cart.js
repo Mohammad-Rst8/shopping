@@ -1,4 +1,4 @@
-import { getlocalstorage, setLocalstorage } from "../functions/funcs.js"
+import { getlocalstorage } from "../functions/funcs.js"
 const coponBtn = document.querySelector(".copon-btn")
 const finalBtn = document.querySelector(".final-btn")
 const postPrice = 100000
@@ -54,36 +54,7 @@ const inserData = (item)=>{
    
 
     const productsMobile = document.querySelector(".products-mobile")
-  //   productsDesktop.insertAdjacentHTML("beforeend", 
-  //   `
-  //   <div class="product-basket-box">
-  //   <div class="product-info">
-  //     <img src="${item.image}" alt="car" width="20" height="20" />
-  //     <h2 class="product-name">${item.name}</h2>
-  //   </div>
-  //   <div class="product-basket-price">
-  //     <p class="product-cart__price">${item.price.toLocaleString('fa-IR')}</p>
-  //     <svg>
-  //       <use href="#toman"></use>
-  //     </svg>
-  //   </div>
-  //   <div class="number-box">
-  //                 <svg class="plus-number__product">
-  //                     <use href="#plus"></use>
-  //                 </svg>
-  //         <p class="product-mobile__numberOF">${item.number}</p>
-  //         <svg class="minus-number__product">
-  //             <use href="#minus"></use>
-  //         </svg>
-  //     </div>
-  //   <div class="product-all__basket-price">
-  //     <p class="product-cart__allprice">${(item.price * item.number).toLocaleString('fa-IR')}</p>
-  //     <svg>
-  //       <use href="#toman"></use>
-  //     </svg>
-  //   </div>
-  // </div>
-  //   `)
+
     productsMobile.insertAdjacentHTML("beforeend" , 
     `
     <div class="product-mobile">
