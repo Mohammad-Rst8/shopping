@@ -17,7 +17,7 @@ const svgMenuButton = document.querySelector("#svgMenuButton")
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 
 const dropDownProfileInsertHtml = () =>{
-  if (window.location.pathname == "/shopping/index.html") {
+  if (window.location.pathname == "/shopping/") {
     dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
     <a
@@ -120,7 +120,7 @@ const setAndGetProductPage = (e) =>{
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
   if(window.location.pathname == "/src/products.html"){
     window.location.reload()
-  }else if(window.location.pathname == "/shopping/index.html"){
+  }else if(window.location.pathname == "/shopping/"){
 
     window.location.href = "./src/products.html"
   }
@@ -168,7 +168,7 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.pathname == "/shopping/index.html" ? window.location.href= "./src/product-detail.html" : window.location.href= "../src/product-detail.html"
+      window.location.pathname == "/shopping/" ? window.location.href= "./src/product-detail.html" : window.location.href= "../src/product-detail.html"
      
 })
      
