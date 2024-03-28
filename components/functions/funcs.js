@@ -188,7 +188,14 @@ const clickproduct = async () => {
     item.addEventListener("click", async () => {
       console.log(item);
       await showdetails(item.getAttribute("user-id"));
-      window.location.href = "./src/product-detail.html";
+      if(window.location.pathname == "/shopping/"){
+    
+        window.location.href = "./src/product-detail.html";
+      }
+      else{
+        window.location.href = "../src/product-detail.html";
+      }
+      
     });
   });
 };
