@@ -140,7 +140,7 @@ comments.forEach(item =>{
                   <use href="#minus"></use>
                 </svg>
               </div>
-              <a href="cart.html" class="buttons" id="add-to__cart--btn">افزودن به سبد خرید</a>
+              <a href="javascript:void(0)" class="buttons" id="add-to__cart--btn">افزودن به سبد خرید</a>
             </div>
           </div>
           <div class="details-left">
@@ -306,7 +306,7 @@ const addtocart = async(product, addToCartBtn) =>{
       swalfire("لطفا وارد حساب کاربری شوید.", "برای خرید باید وارد حساب شده باشید.","error")
        setTimeout( () => {
 
-        window.location.href = "./signup.html"
+        window.location.href = "../src/signup.html"
       },2000)
       return;
     }
