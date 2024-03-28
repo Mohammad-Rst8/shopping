@@ -165,7 +165,8 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.href= "../src/product-detail.html"
+      window.location.pathname == "/shopping/index.html" ? window.location.href= "./src/product-detail.html" : window.location.href= "../src/product-detail.html"
+     
 })
      
    })
