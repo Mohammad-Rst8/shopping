@@ -88,7 +88,13 @@ const setAndGetProductPage = (e) =>{
   localStorage.removeItem("menuItemChild")
   localStorage.setItem('menuItem',e.target.parentElement.dataset.cat)
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
-  window.location.href = "../src/products.html"
+  if(window.location.pathname == "/src/products.html"){
+    window.location.reload()
+  }else{
+
+     window.location.href = "../src/products.html"
+  }
+
 }
 topBarSearchBtn.addEventListener("click", e =>{
   searchProducts(topBarSearchInput.value.trim())
