@@ -20,7 +20,7 @@ const dropDownProfileInsertHtml = () =>{
   dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
     <a
-      href="./src/account managment.html"
+      href="../src/account managment.html"
       class="dropdown-profile__menu--link"
     >
       <svg>
@@ -32,7 +32,7 @@ const dropDownProfileInsertHtml = () =>{
  
   <li class="dropdown-profile__menu--item">
     <a
-      href="./src/signup.html"
+      href="../src/signup.html"
       class="dropdown-profile__menu--link "
       id="logout-btn"
     >
