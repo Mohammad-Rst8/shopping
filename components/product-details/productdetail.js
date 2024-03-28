@@ -256,6 +256,7 @@ let productRateNumber = +productMobileNumberr.innerHTML
    
   })
   addCommentt.classList.add("d-none")
+  window.location.reload()
 }
 const postComment = async (id, title,username,desc,rate) =>{
 

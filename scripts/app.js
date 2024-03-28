@@ -88,7 +88,7 @@ const setAndGetProductPage = (e) =>{
   localStorage.removeItem("menuItemChild")
   localStorage.setItem('menuItem',e.target.parentElement.dataset.cat)
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
-  window.location.href = "./src/products.html"
+  window.location.href = "../src/products.html"
 }
 topBarSearchBtn.addEventListener("click", e =>{
   searchProducts(topBarSearchInput.value.trim())
@@ -106,7 +106,7 @@ const searchProducts = async(value) =>{
   result.forEach(item =>{
     searchbarMenu.insertAdjacentHTML('beforeend', 
      `
-     <a href="./src/product-detail.html" class="searchbar-menu__item header-menu__item-product" product-id="${item.id}">
+     <a href="../src/product-detail.html" class="searchbar-menu__item header-menu__item-product" product-id="${item.id}">
      <span class="searchbar-image-part">
      <img src="${item.mainimage}" alt="image-searchar" width="75" height="75">
     <span>
@@ -129,7 +129,7 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.href= "./src/product-detail.html"
+      window.location.href= "../src/product-detail.html"
 })
      
    })

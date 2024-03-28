@@ -1,7 +1,7 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
 
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
-console.log(cartDetails.number);
+
 if(cartDetails){
 const checkOutDetails = document.querySelector(".checkout-left")
 checkOutDetails.insertAdjacentHTML('beforeend' , 
