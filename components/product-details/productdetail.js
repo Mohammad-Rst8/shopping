@@ -174,12 +174,13 @@ ${
 }
 const insertSizeWrapp = (product) =>{
   const sizeWrapp = document.querySelector('.size-wrapp')
+let prt = product.sizes.split("-")
 
-product.sizes.forEach(item =>{
- 
+prt.forEach(item =>{
+ console.log(item);
   sizeWrapp.insertAdjacentHTML('beforeend' , 
   ` 
-  <span class="product-size ">${item == true ? item : "ندارد"}</span>
+  <span class="product-size ">${item ? item : "ندارد"}</span>
   `)
 })
 }

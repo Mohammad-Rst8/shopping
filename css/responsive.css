@@ -47,6 +47,10 @@
     .main-header__menu{
         font-size: 1.6rem !important;
     }
+    .sign-image{
+        width: 65% !important;
+    }
+  
     .product-img{
         width: 14rem;
     }

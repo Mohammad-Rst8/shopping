@@ -297,6 +297,9 @@ height: 100%;
 .product-img{
  width: 11rem;
 }
+.sign-image{
+  margin: 0 auto;
+}
 .special-sale__product-description{
 display: flex;
 
