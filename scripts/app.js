@@ -17,7 +17,7 @@ const svgMenuButton = document.querySelector("#svgMenuButton")
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 
 const dropDownProfileInsertHtml = () =>{
-  if (window.location.pathname == "/shopping/") {
+  if (window.location.pathname === "/shopping/") {
     dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
     <a
@@ -44,8 +44,8 @@ const dropDownProfileInsertHtml = () =>{
     </a>
   </li>
       `;
+      return;
   }else{
-
     dropdownProfileMenu.innerHTML = `
       <li class="dropdown-profile__menu--item">
       <a
@@ -72,6 +72,7 @@ const dropDownProfileInsertHtml = () =>{
       </a>
     </li>
         `;
+        return;
   }
 }
    if ( getlocalstorage("user")) {
