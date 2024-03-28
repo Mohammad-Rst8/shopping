@@ -247,16 +247,16 @@ let productRateNumber = +productMobileNumberr.innerHTML
   })
 
   
-  addCommentBtn.addEventListener("click" , () =>{
+  addCommentBtn.addEventListener("click" , async() =>{
     const rate = +productMobileNumberr.innerHTML
   const addCommentInputTitle = document.querySelector("#add-comment__input-title").value
   const addCommentInputUsername = document.querySelector("#add-comment__input-username").value
   const addCommentDescription = document.querySelector("#add-comment--description").value
-  postComment(product.id,addCommentInputTitle,addCommentInputUsername,addCommentDescription,rate)
-   
-  })
+  await postComment(product.id,addCommentInputTitle,addCommentInputUsername,addCommentDescription,rate)
   addCommentt.classList.add("d-none")
   window.location.reload()
+   
+  })
 }
 const postComment = async (id, title,username,desc,rate) =>{
 
