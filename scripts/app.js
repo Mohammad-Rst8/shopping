@@ -120,9 +120,12 @@ const setAndGetProductPage = (e) =>{
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
   if(window.location.pathname == "/src/products.html"){
     window.location.reload()
-  }else{
+  }else if(window.location.pathname == "/shopping/index.html"){
 
-     window.location.href = "../src/products.html"
+    window.location.href = "./src/products.html"
+  }
+  else{
+    window.location.href = "../src/products.html"
   }
 
 }
