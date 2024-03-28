@@ -92,8 +92,8 @@ comments.forEach(item =>{
 
             <div class="rating">
               <div class="rating-star">
-              ${ Array(5- product.rate).fill(0).map( (rate) =>`<img src="icons/star.svg" alt="star" width="18" height="18"/>`).join('')}
-              ${ Array(product.rate).fill(0).map( (rate) => `<img src="icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join('')}
+              ${window.location.pathname == "/shopping/" ? Array(5- product.rate).fill(0).map( (rate) =>`<img src="icons/star.svg" alt="star" width="18" height="18"/>`).join(''): Array(5- product.rate).fill(0).map( (rate) =>`<img src="../icons/star.svg" alt="star" width="18" height="18"/>`).join('')}
+              ${window.location.pathname == "/shopping/" ? Array(product.rate).fill(0).map( (rate) => `<img src="icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join(''): Array(product.rate).fill(0).map( (rate) => `<img src="../icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join('')}
               </div>
             </div>
 
