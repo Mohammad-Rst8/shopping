@@ -193,7 +193,7 @@ const clickproduct = async () => {
         window.location.href = "./src/product-detail.html";
       }
       else{
-        window.location.href = "../src/product-detail.html";
+        window.location.pathname = "/shopping/src/product-detail.html";
       }
       
     });
