@@ -17,10 +17,11 @@ const svgMenuButton = document.querySelector("#svgMenuButton")
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 
 const dropDownProfileInsertHtml = () =>{
-  dropdownProfileMenu.innerHTML = `
+  if (window.location.pathname == "/shopping/index.html") {
+    dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
     <a
-      href="../src/account managment.html"
+      href="./src/account managment.html"
       class="dropdown-profile__menu--link"
     >
       <svg>
@@ -32,7 +33,7 @@ const dropDownProfileInsertHtml = () =>{
  
   <li class="dropdown-profile__menu--item">
     <a
-      href="../src/signup.html"
+      href="./src/signup.html"
       class="dropdown-profile__menu--link "
       id="logout-btn"
     >
@@ -43,6 +44,35 @@ const dropDownProfileInsertHtml = () =>{
     </a>
   </li>
       `;
+  }else{
+
+    dropdownProfileMenu.innerHTML = `
+      <li class="dropdown-profile__menu--item">
+      <a
+        href="../src/account managment.html"
+        class="dropdown-profile__menu--link"
+      >
+        <svg>
+          <use href="#profile-icon"></use>
+        </svg>
+        <p>مدیریت اکانت</p>
+      </a>
+    </li>
+   
+    <li class="dropdown-profile__menu--item">
+      <a
+        href="../src/signup.html"
+        class="dropdown-profile__menu--link "
+        id="logout-btn"
+      >
+        <svg>
+          <use href="#logout"></use>
+        </svg>
+        <p>خروج از حساب</p>
+      </a>
+    </li>
+        `;
+  }
 }
    if ( getlocalstorage("user")) {
     

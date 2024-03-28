@@ -261,8 +261,8 @@ border-radius: 1rem;
     gap: 1.2rem;
     justify-content: space-between;
     flex-direction: column;
-    min-height: 20rem;
-    width: 20rem;
+    height: 22rem;
+    width: 25rem;
     
 }
 .comment-title{
@@ -303,6 +303,12 @@ border-radius: 1rem;
 }
 .addcomment a{
     margin: 1rem auto;
+}
+.comment-subtitle{
+    font-size: 1.3rem;
+}
+.user-rate{
+    font-size: 1.5rem;
 }
 .addcomment-title{
 font-size: 1.9rem;
