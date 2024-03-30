@@ -34,7 +34,7 @@ const setTimerSpecialSales = async() =>{
   const clockMinutes = document.querySelectorAll('.clock-minutes')
   const clockSeconds = document.querySelectorAll('.clock-seconds')
 
-    let endDate = new Date("Mar 30, 2024 00:00:00").getTime();
+    let endDate = new Date("Apr 10, 2024 00:00:00").getTime();
  await timerspecial(endDate,clockDay, clockHour, clockMinutes, clockSeconds);
 }
 const swiper = new Swiper(".swiper", {
