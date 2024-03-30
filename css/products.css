@@ -16,7 +16,9 @@
     cursor: pointer;
     position: relative;
 }
-
+.product{
+    margin: 0.7rem auto;
+}
 .courses-top-bar__selection-title {
     display: flex;
     align-items: center;

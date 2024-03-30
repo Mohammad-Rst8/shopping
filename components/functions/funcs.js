@@ -114,13 +114,14 @@ let data =await res.json()
 }
 
 const creatProduct = product =>{
+ 
   let main =`<div class="product-box product" user-id="${product.id}" >
                 <img
                   src="${product.mainimage}"
                   alt="gp11"
                   class="product-img h-100"
                 />
-                <div class="special-sale__product-description gap-1 gap-md-3">
+                <div class="special-sale__product-description  gap-md-3">
                   <h3>${product.name}</h3>
                   <div class="product-price__wrapp">
                     <span class="product-off-price"
@@ -190,7 +191,7 @@ const clickproduct = async () => {
     item.addEventListener("click", async () => {
       console.log(item);
       await showdetails(item.getAttribute("user-id"));
-      if(window.location.pathname == "/shopping/"){
+      if(window.location.pathname == "/shopping/" || window.location.pathname == "/shopping/index.html"){
     
         window.location.href = "./src/product-detail.html";
       }

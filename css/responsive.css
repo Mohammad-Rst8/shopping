@@ -1,8 +1,5 @@
 @media (min-width:568px) {
    
-    .nth-one{
-        width: 50% !important;
-      }
       .row{
         row-gap: 0;
     }
@@ -35,9 +32,13 @@
     .addcomment{
         width: 40rem;
     }
-    .arrival-img{
-        width: 75% ;
-       
+   
+ 
+      .product-price__wrapp{
+font-size: 1.5rem;
+      }
+      .product-price__wrapp{
+        gap: 2.5rem;
       }
 }
 
@@ -50,7 +51,9 @@
     .sign-image{
         width: 65% !important;
     }
-  
+    .special-sale__product-description h3{
+        font-size: 1.45rem;
+              }
     .product-img{
         width: 14rem;
     }

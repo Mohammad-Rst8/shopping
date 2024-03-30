@@ -236,7 +236,7 @@
             <div class="top-bar__content flex-md-row">
               <div class="top-bar__right flex-md-row">
                 <h1>
-                  <a href="../index.html" >آنلاین شاپ</a>
+                  <a href="index.html" >آنلاین شاپ</a>
                 </h1>
                 <div class="top-bar__search">
                   <button type="button" class="top-bar--search__btn" title="button">
@@ -259,7 +259,7 @@
               </div>
               <div class="top-bar__left">
                 <div class="top-bar--buy">
-                  <a href="../src/cart.html" class="btn " title="basket">
+                  <a href="./src/cart.html" class="btn " title="basket">
                     <svg class="arrow">
                       <use href="#buy-icon"></use>
                     </svg>
@@ -274,7 +274,7 @@
                   <div class="dropdown-profile">
                     <ul class="dropdown-profile__menu">
                       <li class="dropdown-profile__menu--item">
-                        <a href="../src/signup.html" class="dropdown-profile__menu--link">
+                        <a href="./src/signup.html" class="dropdown-profile__menu--link">
                             <svg>
                               <use href="#profile-icon"></use>
                             </svg>
@@ -378,13 +378,13 @@
               </svg>
             </button>
             <ul class="mobile-menu">
-              <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="women">
-                <a href="#" class="header-menu_item_link">
+              <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  " data-cat="women">
+                <span class="header-menu_item_link span-menu__item--women">
                   زنانه
                   <svg>
                     <use href="#chevrown-down"></use>
                   </svg>
-                </a>
+                </span>
                 <ul class="submenu-mobile  submenu-mobile__women">
                   <li class="submenu-item" data-cat="women" title="Shirt">
                     <a href="#" class="submenu-item__link">پیراهن</a>
@@ -400,8 +400,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="men">
-                <a href="#" class="header-menu_item_link">
+              <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  " data-cat="men">
+                <span class="header-menu_item_link span-menu__item--men">
                   مردانه
                   <svg
                     width="11"
@@ -414,7 +414,7 @@
                       d="M6.36403 4.95L11.314 0L12.728 1.414L6.36403 7.778L2.67029e-05 1.414L1.41403 0L6.36403 4.95Z"
                     />
                   </svg>
-                </a>
+                </span>
                 <ul class="submenu-mobile  submenu-mobile__men">
                   <li class="submenu-item" data-cat="men" title="Shirt">
                     <a href="#" class="submenu-item__link">پیراهن</a>
@@ -455,8 +455,10 @@
           </div>
         </div>
       </header>
-  
-  
+    
+    
+    <div class="overlay d-md-none h-100 bg-gray-100"></div>
+    
       <main>
         <div class="container">
           <div class="product-datails">

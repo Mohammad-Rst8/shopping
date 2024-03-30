@@ -378,8 +378,7 @@
               />
               <div>
                 <div class="searchbar-menu ">
-                 
-                 
+
                 </div>
               </div>
             </div>
@@ -505,13 +504,13 @@
           </svg>
         </button>
         <ul class="mobile-menu">
-          <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="women">
-            <a href="#" class="header-menu_item_link">
+          <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  " data-cat="women">
+            <span class="header-menu_item_link span-menu__item--women">
               زنانه
               <svg>
                 <use href="#chevrown-down"></use>
               </svg>
-            </a>
+            </span>
             <ul class="submenu-mobile  submenu-mobile__women">
               <li class="submenu-item" data-cat="women" title="Shirt">
                 <a href="#" class="submenu-item__link">پیراهن</a>
@@ -527,8 +526,8 @@
               </li>
             </ul>
           </li>
-          <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  header-menu__item-product" data-cat="men">
-            <a href="#" class="header-menu_item_link">
+          <li class="header-mobile__menu-item px-2 px-lg-3 submenu-mobile__sub  " data-cat="men">
+            <span class="header-menu_item_link span-menu__item--men">
               مردانه
               <svg
                 width="11"
@@ -541,7 +540,7 @@
                   d="M6.36403 4.95L11.314 0L12.728 1.414L6.36403 7.778L2.67029e-05 1.414L1.41403 0L6.36403 4.95Z"
                 />
               </svg>
-            </a>
+            </span>
             <ul class="submenu-mobile  submenu-mobile__men">
               <li class="submenu-item" data-cat="men" title="Shirt">
                 <a href="#" class="submenu-item__link">پیراهن</a>
@@ -584,7 +583,7 @@
   </header>
 
 
-
+<div class="overlay d-md-none h-100 bg-gray-100"></div>
 
 
 
@@ -710,7 +709,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="row" style="margin-bottom: 1rem; row-gap: 1rem" id="best-sales">
+      <div class="row" style="margin-bottom: 1rem; row-gap: 2.5rem" id="best-sales">
       
 
       </div>
@@ -795,16 +794,17 @@
                     <img
                       src="./images/arrival/woman.png"
                       alt="woman"
-                      class="w-75 nth-one arrival-img"
+                      class=" nth-one arrival-img"
                     />
+                    <div class="arrival-text" data-cat="women">
+                      <h3 class="arrival-title">پوشاک زنانه</h3>
+                      <p class="arrival-content">
+                       جدیدترین و زیباترین پیراهن های زنانه را از ما بخواهید
+                      </p>
+                      <a href="./src/products.html" class="arrival-link">خرید</a>
+                    </div>
                   </div>
-                  <div class="arrival-text" data-cat="women">
-                    <h3 class="arrival-title">پوشاک زنانه</h3>
-                    <p class="arrival-content">
-                     جدیدترین و زیباترین پیراهن های زنانه را از ما بخواهید
-                    </p>
-                    <a href="./src/products.html" class="arrival-link">خرید</a>
-                  </div>
+               
                 </div>
               </div>
             </div>
@@ -817,13 +817,13 @@
                       alt="woman"
                       class="mx-4 arrival-img"
                     />
-                  </div>
-                  <div class="arrival-text" data-cat="digital">
-                    <h3 class="arrival-title">اسپیکر</h3>
-                    <p class="arrival-content">
-                      اسپیکر و باند های قدرتمند و اقتصادی
-                    </p>
-                    <a href="./src/products.html" class="arrival-link">خرید</a>
+                    <div class="arrival-text" data-cat="digital">
+                      <h3 class="arrival-title">اسپیکر</h3>
+                      <p class="arrival-content">
+                        اسپیکر و باند های قدرتمند و اقتصادی
+                      </p>
+                      <a href="./src/products.html" class="arrival-link">خرید</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -835,13 +835,13 @@
                       alt="woman"
                       class="mx-4 arrival-img"
                     />
-                  </div>
-                  <div class="arrival-text" data-cat="healthy">
-                    <h3 class="arrival-title">اسپری های خنک</h3>
-                    <p class="arrival-content">
-                      خوشبو ترین اسپری های بدن
-                    </p>
-                    <a href="./src/products.html" class="arrival-link">خرید</a>
+                    <div class="arrival-text" data-cat="healthy">
+                      <h3 class="arrival-title">اسپری های خنک</h3>
+                      <p class="arrival-content">
+                        خوشبو ترین اسپری های بدن
+                      </p>
+                      <a href="./src/products.html" class="arrival-link">خرید</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -852,13 +852,13 @@
             <div class="arrival-box">
               <div class="arrival-image__lastchild">
                 <img src="./images//arrival/ps5.png" alt="ps5" />
-              </div>
-              <div class="arrival-text" data-cat="digital">
-                <h3 class="arrival-title">پلی استیشن 5</h3>
-                <p class="arrival-content">
-                 نسخه سفید و سیاه کنسول بازی
-                </p>
-                <a href="./src/products.html" class="arrival-link">خرید</a>
+                <div class="arrival-text" data-cat="digital">
+                  <h3 class="arrival-title">پلی استیشن 5</h3>
+                  <p class="arrival-content">
+                   نسخه سفید و سیاه کنسول بازی
+                  </p>
+                  <a href="./src/products.html" class="arrival-link">خرید</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1009,7 +1009,6 @@
 
 
     <script src="scripts/swiper.js"></script>
- 
     <script src="scripts/app.js" type="module"></script>
     <script src="components/index.js" type="module"></script>
   </body>

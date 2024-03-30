@@ -12,7 +12,7 @@ window.onload = async() =>{
   checkSpecial(items)? checkSpecial(items) : checkBest(items) ?  checkBest(items) :  loadProducts(items)
 
   await clickproduct();
-    sorting(items)
+   
 
 
 }
@@ -42,14 +42,17 @@ let itemsParent = []
 })
 if(itemsChild.length){
   loadproductinPage(itemsChild)
+  sorting(itemsChild)
   return ;
 }else if(itemsParent.length && !titlemenuChild){
   loadproductinPage(itemsParent)
+  sorting(itemsParent)
   return;
 }
 else{
   if(!titlemenu && !titlemenuChild){
     loadproductinPage(items)
+    sorting(items)
 
   }else{
 
@@ -69,10 +72,10 @@ if(items.length){
     
       productPageWrapper.insertAdjacentHTML('beforeend', 
           `
-          <div class="col-12 col-md-4">
+        
                        
           ${creatProduct(product)}
-      </div>
+      
           `
       )
   })
@@ -88,7 +91,7 @@ const checkSpecial =  (data) =>{
  
   if(localStore){
     
-    data.forEach(item =>{
+    const items = data.filter(item =>{
       if(item.specialSales == "yes"){
         
         console.log(item);
@@ -97,8 +100,11 @@ const checkSpecial =  (data) =>{
         ${creatProduct(item)}
         `
         )
+        return item
       }
     })
+    
+   sorting(items)
     localStorage.removeItem("special")
     return true
   }
@@ -113,7 +119,7 @@ const checkBest =  (data) =>{
     let arr = data.sort((a,b) => b.Remainingnumber - a.Remainingnumber)
             
           
-    arr.forEach( product => {
+    const items = arr.filter( product => {
 
       productPageWrapper.insertAdjacentHTML('beforeend' ,
       `
@@ -123,7 +129,9 @@ const checkBest =  (data) =>{
       
         `
       )
+      return product;
     })
+    sorting(items)
     localStorage.removeItem("best")
     return true
   }
@@ -137,24 +145,28 @@ const sorting = (items) =>{
       })
       item.classList.add("courses-top-bar__selection-item--active")
       coursesTopBarSelectionTitle.textContent = item.innerHTML
-      
+      console.log("click");
       sortdata(items, item.value)
     })
   })
 }
 const sortdata = (items, val) =>{
   if(val == 0){
+    
     loadproductinPage(items)
   }
   else if(val ==1){
+    
         const sortExpensive = items.toSorted((a,b) => b.price - a.price)
         loadproductinPage(sortExpensive)
   }
   else if(val ==2){
+    
     const sortExpensive = items.toSorted((a,b) => a.price - b.price)
     loadproductinPage(sortExpensive)
   }
   else if(val ==3){
+    
     const sortExpensive = items.toSorted((a,b) => b.rate - a.rate)
     loadproductinPage(sortExpensive)
   }

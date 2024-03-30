@@ -2,9 +2,10 @@ import { logout } from "../components/functions/funcs.js";
 import { searchInputInProduct } from "../components/functions/funcs.js";
 import { getlocalstorage } from "../components/functions/funcs.js";
 import { getAndShowProductsMenu } from "../components/functions/funcs.js";
-
+const overlay = document.querySelector(".overlay")
 
 const menubtn = document.getElementById('menubtn')
+const mobileMenu = document.querySelector('.mobile-menu')
 const xicon = document.querySelector('.xicon')
 const headerMenuItem = document.querySelectorAll('.header-menu__item-product')
 const mobileTopbar = document.querySelector('.mobile-topbar')
@@ -17,7 +18,7 @@ const svgMenuButton = document.querySelector("#svgMenuButton")
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 
 const dropDownProfileInsertHtml = () =>{
-  if (window.location.pathname === "/shopping/") {
+  if (window.location.pathname == "/shopping/" || window.location.pathname == "/shopping/index.html") {
     dropdownProfileMenu.innerHTML = `
     <li class="dropdown-profile__menu--item">
     <a
@@ -94,9 +95,11 @@ const dropDownProfileInsertHtml = () =>{
 
 menubtn.addEventListener('click', () =>{
   mobileTopbar.classList.toggle('mobile-menu__active')
+  overlay.classList.add("w-100")
     })
 xicon.addEventListener('click', () =>{
       mobileTopbar.classList.toggle('mobile-menu__active')
+      overlay.classList.remove("w-100")
     })
 
  headerMenuItem.forEach( item => {
@@ -121,7 +124,7 @@ const setAndGetProductPage = (e) =>{
   localStorage.setItem('menuItemChild',e.target.parentElement.title)
   if(window.location.pathname == "/src/products.html"){
     window.location.reload()
-  }else if(window.location.pathname == "/shopping/"){
+  }else if(window.location.pathname == "/shopping/" || window.location.pathname == "/shopping/index.html"){
 
     window.location.href = "./src/products.html"
   }
@@ -131,19 +134,24 @@ const setAndGetProductPage = (e) =>{
 
 }
 topBarSearchBtn.addEventListener("click", e =>{
-  searchProducts(topBarSearchInput.value.trim())
+  topBarSearchInput.value.trim() && searchProducts(topBarSearchInput.value.trim())
 })
 
 topBarSearchInput.addEventListener('keydown', (e) => {
-  e.keyCode == 13 && searchProducts(e.target.value.trim())
+  if(e.keyCode == 13 && e.target.value.trim()){
+     searchProducts(e.target.value.trim())
+
+  }
 })
 
 const searchProducts = async(value) =>{
   const arr = await getAndShowProductsMenu()
   const result =  searchInputInProduct(value,arr)
   searchbarMenu.classList.add('searchbar-menu__active')
+  
+  searchbarMenu.innerHTML = ""
 
-  result.forEach(item =>{
+  result.length ? result.forEach(item =>{
     searchbarMenu.insertAdjacentHTML('beforeend', 
      `
      <a href="../src/product-detail.html" class="searchbar-menu__item header-menu__item-product" product-id="${item.id}">
@@ -156,10 +164,16 @@ const searchProducts = async(value) =>{
     </span>
      </span>
        <h3>${item.price ? item.price.toLocaleString('fa-IR') : "رایگان"}</h3>
+       <svg>
+                      <use href="#toman"></use>
+                    </svg>
    </a>
        `)
        
-   })
+   }) : searchbarMenu.innerHTML = `<span class="p-5">محصولی یافت نشد</span>`
+
+     
+  
    const searchbarMenuItem = document.querySelectorAll(".searchbar-menu__item")
    
    searchbarMenuItem.forEach(item =>{
@@ -169,7 +183,7 @@ item.addEventListener("click", () =>{
       })
       localStorage.removeItem("product")
       localStorage.setItem("product", JSON.stringify(clickedProduct))
-      window.location.pathname == "/shopping/" ? window.location.href= "./src/product-detail.html" : window.location.href= "../src/product-detail.html"
+      (window.location.pathname == "/shopping/" || window.location.pathname == "/shopping/index.html") ? window.location.href= "./src/product-detail.html" : window.location.href= "../src/product-detail.html"
      
 })
      
@@ -177,21 +191,23 @@ item.addEventListener("click", () =>{
     
      
 }
-
+const spanMenuItemWomen = document.querySelector(".span-menu__item--women")
+const spanMenuItemMen = document.querySelector(".span-menu__item--men")
 window.addEventListener("click" , (e) =>{
 if(e.target != searchbarMenu){
   searchbarMenu.classList.remove("searchbar-menu__active")
 }
-if(e.target != mobileTopbar && e.target != svgMenuButton && e.target != menubtn){
 
-  if(mobileTopbar.classList.contains("mobile-menu__active")){
+})
+overlay.addEventListener("click" , () =>{
 
-    mobileTopbar.classList.remove("mobile-menu__active")
-  }
+ 
+    
+      overlay.classList.remove("w-100")
+      mobileTopbar.classList.remove("mobile-menu__active")
+    
+ 
   
-}
-
-
 
 })
 
