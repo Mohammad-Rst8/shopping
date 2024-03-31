@@ -109,7 +109,7 @@ else{
    console.log(userrrr);
 
 
-responsee()
+
 const submitSell = document.querySelector("#submit-sell")
 submitSell.addEventListener("click", () =>{
     checkInpust()
