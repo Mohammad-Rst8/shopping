@@ -1,8 +1,7 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
-
+const userid =getlocalstorage("user")
+let user
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
-console.log(getlocalstorage("checkout"));
-console.log(cartDetails)
 if(cartDetails){
 const checkOutDetails = document.querySelector(".checkout-left")
 checkOutDetails.insertAdjacentHTML('beforeend' , 
@@ -92,7 +91,19 @@ else{
 
     window.location.href = "../../index.html"
 }
-
+const response = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
+        headers: {
+            apikey:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+          },
+    })
+    const users = response.json()
+    users.then(Allusers => {
+       user = Allusers.filter(userr => {
+            return userr.userID == userid
+        })
+    })
+console.log(user);
 const submitSell = document.querySelector("#submit-sell")
 submitSell.addEventListener("click", () =>{
     checkInpust()
@@ -114,13 +125,14 @@ const regexPostalCode = /^\d{10}$/g;
 const resultEmail  = regexEmail.test(checkoutInputEmail)
 const resultPhone = regexPhoneNumber.test(checkoutInputPhonenumber)
 const resultPostalcode = regexPostalCode.test(checkoutInputPostalcode)
+if (Number(cartDetails.priceALL) < user.balance) {
+    
+}
 if(resultPostalcode && resultPhone && resultEmail && paybox){
-    const userid =getlocalstorage("user")
-   
 const arr  = {
     sellType: "اینترنتی",
     payType: "کیف پول",
-    priceSell:cartDetails.price,
+    priceSell:cartDetails.priceALL,
     username:checkoutInputUsername,
     postalCode:checkoutInputPostalcode,
     address:checkoutInputAddress,
