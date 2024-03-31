@@ -1,6 +1,6 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
-const userid =getlocalstorage("user")
-let userrrr
+
+let userrrr = ""
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
 if(cartDetails){
 const checkOutDetails = document.querySelector(".checkout-left")
@@ -93,7 +93,7 @@ else{
 }
 
 
-
+    const userid = localStorage.getItem("user")
     const resp = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
            headers: {
                apikey:
@@ -105,9 +105,9 @@ else{
         userrrr = Allusers.find(userr => {
                return userr.userID == userid
            })
-       })
-   console.log(userrrr);
-
+        })
+        console.log(userrrr);
+ 
 
 
 const submitSell = document.querySelector("#submit-sell")
