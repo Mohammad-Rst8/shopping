@@ -21,11 +21,9 @@ window.addEventListener("load", async () => {
   await loadBannerImages();
   await setTimerSpecialSales()
 await loadPopularProduct()
-
-
   await loadSpecialSale(data);
   await loadBestSale(data);
-
+  await loadDiscountBanner()
   await clickproduct();
 });
 const setTimerSpecialSales = async() =>{
@@ -165,3 +163,31 @@ pageinationArrowLeft.addEventListener("click" , (e) =>{
    swiperproductWrapper.style.right = (elem - 100) + 'px' 
   }
 })
+
+const loadDiscountBanner = async () =>{
+const discountContent = document.querySelector(".discount-content")
+  const discountCode = document.querySelector(".discount-code")
+
+const response = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/copon?select=*",{
+  headers : {
+    "apikey" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw"
+  }
+})
+const data = response.json()
+data.then(codes => {
+  codes.forEach(code => {
+    console.log(code);
+    if(code.isBanner){
+      discountContent.innerHTML = code.textCopoun + ":"
+      discountCode.innerHTML = code.code 
+    }
+  })
+  // const item = Math.floor(Math.random() * codes.length)
+  // discountContent.innerHTML = codes[item].textCopoun
+  // console.log();
+  // discountCode.innerHTML = codes[item].code
+})
+
+
+
+}

@@ -191,8 +191,7 @@ item.addEventListener("click", () =>{
     
      
 }
-const spanMenuItemWomen = document.querySelector(".span-menu__item--women")
-const spanMenuItemMen = document.querySelector(".span-menu__item--men")
+
 window.addEventListener("click" , (e) =>{
 if(e.target != searchbarMenu){
   searchbarMenu.classList.remove("searchbar-menu__active")
