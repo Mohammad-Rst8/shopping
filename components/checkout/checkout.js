@@ -99,7 +99,7 @@ const response = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/u
     })
     const users = response.json()
     users.then(Allusers => {
-       user = Allusers.filter(userr => {
+       user = Allusers.find(userr => {
             return userr.userID == userid
         })
     })
