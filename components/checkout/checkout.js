@@ -1,7 +1,6 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
 const userid =getlocalstorage("user")
-console.log(userid);
-let user
+let userrrr
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
 if(cartDetails){
 const checkOutDetails = document.querySelector(".checkout-left")
@@ -92,19 +91,23 @@ else{
 
     window.location.href = "../../index.html"
 }
-const response = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
-        headers: {
-            apikey:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
-          },
-    })
-    const users = response.json()
-    users.then(Allusers => {
-       user = Allusers.find(userr => {
-            return userr.userID == userid
-        })
-    })
-console.log(user);
+const response =async () =>{
+
+    const resp = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
+           headers: {
+               apikey:
+                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+             },
+       })
+       const users = resp.json()
+       users.then(Allusers => {
+        userrrr = Allusers.find(userr => {
+               return userr.userID == userid
+           })
+       })
+   console.log(userrrr);
+
+}
 const submitSell = document.querySelector("#submit-sell")
 submitSell.addEventListener("click", () =>{
     checkInpust()
