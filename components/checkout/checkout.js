@@ -91,7 +91,8 @@ else{
 
     window.location.href = "../../index.html"
 }
-const response =async () =>{
+
+const responsee =async () =>{
 
     const resp = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
            headers: {
@@ -108,6 +109,7 @@ const response =async () =>{
    console.log(userrrr);
 
 }
+responsee()
 const submitSell = document.querySelector("#submit-sell")
 submitSell.addEventListener("click", () =>{
     checkInpust()
