@@ -21,6 +21,8 @@ const register = () => {
    return
   }
   const id = produceUserID()
+  const balanceArr = [1000000,2000000,1200000,1500000,3000000,1400000,1600000,2200000]
+const balanceIndex = Math.floor(Math.random()*balanceArr.length)
   let val = {
     firstname: signFirstname.value.trim(),
     lastname: signLastname.value.trim(),
@@ -28,6 +30,7 @@ const register = () => {
     phonenumber: signPhone.value.trim(),
     password: signPass.value.trim(),
     userID : id,
+    balance : balanceArr[balanceIndex]
   };
 
   fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users", {
@@ -42,7 +45,7 @@ const register = () => {
     
     clearInputs([signFirstname, signLastname, signEmail, signPhone, signPass]);
     res.ok ? setLocalstorage(id) : swalfire("ثبت نام انجام نشد", "فرایند ثبت نام شما انجام نشد، بعدا تلاش کنید.", "error");
-    swalfire("ok" , "success", "success")
+    swalfire("ok" , `مبلغ ${balanceArr[balanceIndex].toLocaleString("fa-IR")} از طرف مدیر سابت یه کیف پول شما اضافه شد.`, "success")
 
   });
   

@@ -1,17 +1,7 @@
 import { register } from "../auth.js";
 import {getuserInfo } from "../searchLogin.js";
 
-window.addEventListener('load' , () =>{
-    const user = getuserInfo()
-   
-    if(user){
-        
-    }
-    else{
-        console.log("no login");
 
-    }
-})
 let signupBtn = document.querySelector(".signup-btn");
 
 signupBtn.addEventListener('click' , (e) =>{
@@ -19,4 +9,6 @@ signupBtn.addEventListener('click' , (e) =>{
     register()
 })
 
-
+const balanceArr = [1000000,2000000,1200000,1500000,3000000,1400000,1600000,2200000]
+const balance = Math.floor(Math.random()*balanceArr.length)
+console.log(balanceArr[balance]);
