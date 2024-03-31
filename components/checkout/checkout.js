@@ -1,8 +1,9 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
+const userid = getlocalstorage("user")
 
-let userrrr = ""
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
 if(cartDetails){
+    getuser()
 const checkOutDetails = document.querySelector(".checkout-left")
 checkOutDetails.insertAdjacentHTML('beforeend' , 
 `
@@ -93,20 +94,7 @@ else{
 }
 
 
-    const userid = localStorage.getItem("user")
-    const resp = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
-           headers: {
-               apikey:
-                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
-             },
-       })
-       const users = resp.json()
-       users.then(Allusers => {
-        userrrr = Allusers.find(userr => {
-               return userr.userID == userid
-           })
-        })
-        console.log(userrrr);
+   
  
 
 
@@ -135,6 +123,7 @@ if (Number(cartDetails.priceALL) < user.balance) {
     
 }
 if(resultPostalcode && resultPhone && resultEmail && paybox){
+
 const arr  = {
     sellType: "اینترنتی",
     payType: "کیف پول",
@@ -167,3 +156,21 @@ swalfire("برای تکمیل فرایند خرید تمام فیلد ها را 
 }
 
 }
+
+const getuser = async () =>{
+
+    await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?select=*", {
+           headers: {
+               apikey:
+                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+             },
+       }).then(res => res.json())
+       .then(data => {
+       const use = data.find(element => {
+            return element.userID == userid
+        });
+        console.log(use);
+       })
+}
+  
+  
