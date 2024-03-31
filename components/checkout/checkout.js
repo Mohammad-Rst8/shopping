@@ -1,5 +1,6 @@
 import { getlocalstorage, swalfire } from "../functions/funcs.js";
 const userid =getlocalstorage("user")
+console.log(userid);
 let user
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
 if(cartDetails){
