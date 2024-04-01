@@ -12,13 +12,13 @@ const getuser = async () =>{
        const use = data.find(element => {
             return element.userID == userid
         });
-        console.log(use);
+       return use
        })
 }
   
 let cartDetails = JSON.parse(localStorage.getItem("checkout"))
 if(cartDetails){
-    getuser()
+   
 const checkOutDetails = document.querySelector(".checkout-left")
 checkOutDetails.insertAdjacentHTML('beforeend' , 
 `
@@ -134,9 +134,7 @@ const regexPostalCode = /^\d{10}$/g;
 const resultEmail  = regexEmail.test(checkoutInputEmail)
 const resultPhone = regexPhoneNumber.test(checkoutInputPhonenumber)
 const resultPostalcode = regexPostalCode.test(checkoutInputPostalcode)
-if (Number(cartDetails.priceALL) < user.balance) {
-    
-}
+
 if(resultPostalcode && resultPhone && resultEmail && paybox){
 
 const arr  = {
@@ -151,6 +149,8 @@ const arr  = {
     userID:userid,
     numberProduct:cartDetails.number
 }
+const userInSell = getuser()
+if ((cartDetails.priceALL) < userInSell.balance) {
     await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/orders", {
         method: "POST",
         headers: {
@@ -161,12 +161,35 @@ const arr  = {
           body: JSON.stringify(arr)
     }).then(res => console.log(res))
 
-    swalfire(`خرید با موفقیت انجام شد`, `مبلغ ${cartDetails.price.toLocaleString('fa-IR')} تومان از کیف پول شما برداشت شد.`, "success")
+    swalfire(`خرید با موفقیت انجام شد`, `مبلغ ${cartDetails.priceALL.toLocaleString('fa-IR')} تومان از کیف پول شما برداشت شد.`, "success")
+        
+            const userArr = {
+                address : userInSell.address,
+                balance : userInSell.balance - cartDetails.priceALL,
+                basket : userInSell.basket,
+                email : userInSell.email,
+                firstname : userInSell.firstname,
+                lastname : userInSell.lastname,
+                password : userInSell.password,
+                phonenumber : userInSell.phonenumber,
+                userID : userInSell.userID,
 
-
-
-
+            }
+        await fetch(`https://uqkfskiduursccnhissi.supabase.co/rest/v1/users?id=eq.${userInSell.id}`,{
+            method : "PATCH",
+            headers: {
+                "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+                "Content-Type": "application/json",
+                
+              },
+              body: JSON.stringify(userArr)
+        })
 }else{
+swalfire("موجودی کافی نیست","موجودی کیف پول شما برای خرید کافی نیست.\nبرای افزایش موجودی به پشتیبانی پیام دهید.","error")
+}
+
+}
+else{
 swalfire("برای تکمیل فرایند خرید تمام فیلد ها را به درستی تکمیل کنید.")
 }
 
