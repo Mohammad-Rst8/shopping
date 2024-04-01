@@ -150,7 +150,8 @@ const arr  = {
     numberProduct:cartDetails.number
 }
 const userInSell = getuser()
-if ((cartDetails.priceALL) < userInSell.balance) {
+console.log(cartDetails.priceALL , userInSell.balance , typeof cartDetails.priceALL , typeof userInSell.balance );
+if (cartDetails.priceALL < userInSell.balance) {
     await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/orders", {
         method: "POST",
         headers: {
