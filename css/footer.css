@@ -46,10 +46,12 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 300ms all ease-in ;
   }
   .contactlink svg, .contactlink svg path{
     stroke: var(--white-color);
     fill: var(--white-color);
+    transition: 160ms all ease-in ;
   }
   .contactlink:hover svg, .contactlink:hover svg path{
     stroke: var(--primary-color);

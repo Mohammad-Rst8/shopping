@@ -46,6 +46,29 @@ font-size: 1.5rem;
    gap: 1rem;
         font-size: 1.8rem;
       }
+      .product-name{
+       
+        font-size: 1.7rem;
+    }
+    .product-detail__title{
+        font-size: 1.5rem;
+    }
+    .number-box{
+      width: 8rem;
+       
+    }
+    .product-color{
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    .colors-wrapp{
+        
+        margin: 0;
+        
+    }
+    .product-size {
+    width: 5rem;
+    }
 }
 
 

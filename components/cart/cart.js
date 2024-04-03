@@ -1,6 +1,7 @@
 import { getlocalstorage } from "../functions/funcs.js"
 const coponBtn = document.querySelector(".copon-btn")
 const finalBtn = document.querySelector(".final-btn")
+const productsMobile = document.querySelector(".products-mobile")
 const postPrice = 100000
 let priceToNum = 0
 let moponPrice
@@ -16,13 +17,25 @@ const finduserProducts = async(products) =>{
     const SubtotalPrice = document.querySelector(".Subtotal-price")
     
     const SubtotalPriceAll = document.querySelector(".Subtotal-price__all")
-    const mopon = document.querySelector(".Subtotal-price__off")
-    const SubtotalPricePost = document.querySelector(".Subtotal-price__post")
-    
-    
-  userCart.forEach( item =>{
 
+    const SubtotalPricePost = document.querySelector(".Subtotal-price__post")
+
+    const finalRegistrationLeft = document.querySelector(".Final-registration__left")
+    const coponPart = document.querySelector(".copon-part")
+    if (!userCart.length) {
+      console.log("no");
+      productsMobile.innerHTML = "سبد خرید خالی است"
+      finalRegistrationLeft.classList.add("d-none")
+      coponPart.classList.add("d-none")
+    }else{
+      finalRegistrationLeft.classList.remove("d-none")
+      coponPart.classList.remove("d-none")
+
+    }
+  userCart.forEach( async item =>{
+    console.log("ok");
     inserData(item)
+    await deleteProductButton(item.id)
     numberProductInCart++
     priceToNum += (item.price * item.number)
     SubtotalPrice.innerHTML = priceToNum.toLocaleString('fa-IR')
@@ -53,36 +66,36 @@ const inserData = (item)=>{
     const productsDesktop = document.querySelector(".products")
    
 
-    const productsMobile = document.querySelector(".products-mobile")
-
+    
+       
     productsMobile.insertAdjacentHTML("beforeend" , 
     `
     <div class="product-mobile">
               <div class="products-mobile__right">
                   <img src="${item.image}" alt="" class="products-mobile__image">
-                  
+                  <button type="button" class="del-btn" data-id="${item.id}">حذف</button>
               </div>
   
               <div class="products-mobile__left">
                 <div class="product-option">
                   <h3 class="product-name">${item.name}</h3>
                   <div class="product-colors">
-                    <p>رنگ انتخابی :</p>
+                    <p class="product-detail__title">رنگ انتخابی :</p>
                     <div class="colors-wrapp">
                       <span class="product-color active bg-${item.color}"> </span>
                      
                     </div>
                   </div>
                   <div style="display:flex; width:100%; align-items:center; justify-content:space-between;">
-                  <p>تعداد انتخابی:</p>
+                  <p class="product-detail__title">تعداد انتخابی:</p>
                   
-                  <div class="number-box" style="width:5rem" >
+                  <div class="number-box"  >
                       <p class="product-mobile__numberOF">${item.number}</p>
                   
                   </div>
                   </div>
                   <div class="product-sizes">
-                    <p>اندازه انتخابی :</p>
+                    <p class="product-detail__title">اندازه انتخابی :</p>
                     <div class="size-wrapp">
                       <span class="product-size active">${item.size}</span>
                     
@@ -105,8 +118,11 @@ const inserData = (item)=>{
               </div>
 
             </div>
-    `)
-
+    `
+    
+    )
+    
+   
    
 
 
@@ -159,14 +175,7 @@ else{
 }
 }
 
-const clickPlusProduct = () =>{
-const plus = document.querySelectorAll(".plus-number__product")
-const productCartPrice = document.querySelector(".product-cart__price")
-const productMobileNumber = document.querySelectorAll(".product-mobile__numberOF")
-const productCartprice = document.querySelectorAll(".product-cart__allprice")
 
-
-}
 
 
 finalBtn.addEventListener("click", async (e) =>{
@@ -188,4 +197,27 @@ await localStorage.setItem("checkout" , JSON.stringify(arr))
 
 })
 
-// تعداد محصولات - هزینه ارسال - قیمت نهایی - قیمت کالاها - کدتخفیف
+const deleteProductButton = (id) =>{
+ const delBtn = document.querySelectorAll(".del-btn")
+ delBtn.forEach(del =>{
+  const delid = del.getAttribute("data-id")
+  if(id == delid){
+    del.addEventListener("click", async() =>{
+      productsMobile.innerHTML = ""
+       await fetch(`https://uqkfskiduursccnhissi.supabase.co/rest/v1/userBaskets?id=eq.${id}` ,{
+        method: "DELETE",
+        headers: {
+          "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxa2Zza2lkdXVyc2Njbmhpc3NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0NzU2MTksImV4cCI6MjAyNTA1MTYxOX0.BL4OkMrGMlJwg9hWusC6qHC5ztwsF1vzzyB802FSHUw",
+        },
+       }).then(res => {
+        
+        window.location.reload()
+      
+      })
+      })
+
+  }
+  return;
+
+ })
+}

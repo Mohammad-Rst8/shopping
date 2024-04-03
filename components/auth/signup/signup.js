@@ -9,6 +9,5 @@ signupBtn.addEventListener('click' , (e) =>{
     register()
 })
 
-const balanceArr = [1000000,2000000,1200000,1500000,3000000,1400000,1600000,2200000]
+const balanceArr = [6000000,8000000,2200000,13000000,30000000,2400000,2600000,3200000]
 const balance = Math.floor(Math.random()*balanceArr.length)
-console.log(balanceArr[balance]);

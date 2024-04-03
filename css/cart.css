@@ -159,7 +159,7 @@ height: 2rem;
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    width: 9rem;
+   width: 4rem;
     padding: 0.5rem;
     border-radius: 1rem;
     border: 0.5px solid #50505067;
@@ -174,7 +174,7 @@ height: 2rem;
     stroke: var(--primary-color);
 }
 .product-mobile__number{
-    width: 5rem;
+    width: 4rem;
     height: 3rem;
     padding: 0.2rem 0.4rem;
     font-family: dana;
@@ -198,6 +198,10 @@ height: 9rem;
 }
 .product-name{
     font-weight: bold;
+    font-size: 1.5rem;
+}
+.product-detail__title{
+    font-size: 1.35rem;
 }
 .product-colors{
     display: flex;
@@ -207,8 +211,8 @@ height: 9rem;
 }
 
 .product-color{
-width: 2.4rem;
-height: 2.4rem;
+width: 1.6rem;
+height: 1.6rem;
 
 outline: 0.5px solid #353535; 
 border-radius: 50%;
@@ -224,7 +228,7 @@ border: 1px solid #fff;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    margin-left: 1.3rem;
+    margin: 1rem;
 }
 .product-sizes{
     display: flex;
@@ -238,7 +242,7 @@ border: 1px solid #fff;
     gap: 0.4rem;
 }
 .product-size{
-    width: 5rem;
+    width: 4rem;
     height: 4rem;
     display: flex;
     align-items: center;
@@ -263,4 +267,12 @@ border: 1px solid #fff;
     position: absolute;
     top: 5rem;
     
+}
+
+.del-btn{
+    width: 5.5rem;
+    height: 3.5rem;
+   background-color: #353535;
+   color: var(--white-color);
+    border-radius: 1rem;
 }

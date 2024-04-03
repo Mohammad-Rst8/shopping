@@ -75,6 +75,7 @@ border: 1px solid #fff;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
+    margin-left: 1rem;
 }
 
 .product-sizes{
