@@ -119,6 +119,7 @@ const creatProduct = product =>{
                 <img
                   src="${product.mainimage}"
                   alt="gp11"
+                  loading="lazy"
                   class="product-img h-100"
                 />
                 <div class="special-sale__product-description  gap-md-3">
@@ -133,10 +134,10 @@ const creatProduct = product =>{
                   </div>
                   <div class="rating">
                     <div class="rating-star">
-                    ${window.location.pathname == "/shopping/" || window.location.pathname =="/shopping/index.html" ? Array(5- product.rate).fill(0).map( (rate) =>`<img src="icons/star.svg" alt="star" width="18" height="18"/>`).join('') : Array(5- product.rate).fill(0).map( (rate) =>`<img src="../icons/star.svg" alt="star" width="18" height="18"/>`).join('')}
+                    ${window.location.pathname == "/shopping/" || window.location.pathname =="/shopping/index.html" ? Array(5- product.rate).fill(0).map( (rate) =>`<img src="icons/star.svg" loading="lazy" alt="star" width="18" height="18"/>`).join('') : Array(5- product.rate).fill(0).map( (rate) =>`<img src="../icons/star.svg" loading="lazy" alt="star" width="18" height="18"/>`).join('')}
                       
                     
-                    ${ window.location.pathname == "/shopping/" || window.location.pathname =="/shopping/index.html" ?Array(product.rate).fill(0).map( (rate) => `<img src="icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join('') : Array(product.rate).fill(0).map( (rate) => `<img src="../icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join('')}
+                    ${ window.location.pathname == "/shopping/" || window.location.pathname =="/shopping/index.html" ?Array(product.rate).fill(0).map( (rate) => `<img src="icons/star-fill.svg" loading="lazy" alt="starfill" width="18" height="18"/>`).join('') : Array(product.rate).fill(0).map( (rate) => `<img src="../icons/star-fill.svg" loading="lazy" alt="starfill" width="18" height="18"/>`).join('')}
                     </div>
                     <span class="rating-comment-count">(${product.commentsnumber})</span>
                   </div>

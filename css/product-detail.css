@@ -191,7 +191,7 @@ border-radius: 1rem;
     border-radius: 1rem;
     border: 0.5px solid #50505067;
     box-shadow: 0px 4px 4px #50505067;
-   
+   background-color: var(--primary-color);
 }
 
 .number-box svg{
@@ -334,6 +334,7 @@ height: 3rem;
     width: 100%;
     padding: 0.5rem 1rem;
 }
+
 .add-comment--title,.add-comment-description{
     display: flex;
    padding: 1rem 0.4rem;

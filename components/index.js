@@ -73,6 +73,7 @@ const loadBannerImages = async() => {
                     src="${item.address}"
                     alt="${item.title}"
                     data-cat="${item.maincat}"
+                    loading="lazy"
                     class="main-header__image"
                   />
                 </div>

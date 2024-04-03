@@ -72,7 +72,7 @@ const inserData = (item)=>{
     `
     <div class="product-mobile">
               <div class="products-mobile__right">
-                  <img src="${item.image}" alt="" class="products-mobile__image">
+                  <img src="${item.image}" alt="${item.maincat}" loading="lazy" class="products-mobile__image">
                   <button type="button" class="del-btn" data-id="${item.id}">حذف</button>
               </div>
   

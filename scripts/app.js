@@ -156,7 +156,7 @@ const searchProducts = async(value) =>{
      `
      <a href="../src/product-detail.html" class="searchbar-menu__item header-menu__item-product" product-id="${item.id}">
      <span class="searchbar-image-part">
-     <img src="${item.mainimage}" alt="image-searchar" width="75" height="75">
+     <img src="${item.mainimage}" loading="lazy" alt="image-searchar" width="75" height="75">
     <span>
       <h4>${item.name}</h4>
       <p id="product-cat">${item.subcate ? item.maincate  +"/"+ item.subcate : item.maincate}</p>

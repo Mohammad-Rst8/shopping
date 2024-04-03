@@ -92,8 +92,8 @@ comments.forEach(item =>{
 
             <div class="rating">
               <div class="rating-star">
-              ${ Array(5- product.rate).fill(0).map( (rate) =>`<img src="../icons/star.svg" alt="star" width="18" height="18"/>`).join('')}
-              ${ Array(product.rate).fill(0).map( (rate) => `<img src="../icons/star-fill.svg" alt="starfill" width="18" height="18"/>`).join('')}
+              ${ Array(5- product.rate).fill(0).map( (rate) =>`<img src="../icons/star.svg" alt="star" loading="lazy" width="18" height="18"/>`).join('')}
+              ${ Array(product.rate).fill(0).map( (rate) => `<img src="../icons/star-fill.svg" alt="starfill" loading="lazy" width="18" height="18"/>`).join('')}
               </div>
             </div>
 
@@ -144,7 +144,7 @@ comments.forEach(item =>{
             </div>
           </div>
           <div class="details-left">
-            <img src="${product.mainimage}" alt="main" class="main-image" />
+            <img src="${product.mainimage}" loading="lazy" alt="main" class="main-image" />
             <div class="slides">
              
             </div>
@@ -408,7 +408,7 @@ const insertSubImageWrapp = (product) =>{
 
     slides.insertAdjacentHTML("beforeend" , 
     `
-    <img src="${items[i]}" alt="" class="image-slide" />
+    <img src="${items[i]}" loading="lazy" alt="${item[i].maincat}" class="image-slide" />
     `)
   }
   else{
