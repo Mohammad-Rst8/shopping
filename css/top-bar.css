@@ -168,7 +168,7 @@ padding: 0.8rem 1.5rem ;
 user-select: none;
 border-radius: 1rem;
 }
-.header-menu_item_link svg{
+.header-menu_item_link svg, .span-menu__item--women svg{
   margin-right: 0.7rem;
   width: 1.2rem;
   height: 1.2rem;
@@ -198,12 +198,20 @@ border-radius: 1rem;
   fill: var(--white-color);
   border-radius: 1rem;
   }
+  .span-menu__item--women{
+
+  }
   .header-menu__item:hover   .submenu{
     visibility: visible;
   }
-  .submenu-mobile__sub:hover  .submenu-mobile{
-    display: block;
-  }
+ .submenu-mobile__active{
+  display: block !important;
+ }
+ .svgrotate{
+  transform: rotate(180deg);
+  
+ }
+
   .submenu{
     width: 15rem;
     display: flex;

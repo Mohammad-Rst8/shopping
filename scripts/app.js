@@ -5,7 +5,7 @@ import { getAndShowProductsMenu } from "../components/functions/funcs.js";
 const overlay = document.querySelector(".overlay")
 
 const menubtn = document.getElementById('menubtn')
-const mobileMenu = document.querySelector('.mobile-menu')
+
 const xicon = document.querySelector('.xicon')
 const headerMenuItem = document.querySelectorAll('.header-menu__item-product')
 const mobileTopbar = document.querySelector('.mobile-topbar')
@@ -13,7 +13,9 @@ const topBarSearchInput = document.querySelector('.top-bar--search__input')
 const searchbarMenu = document.querySelector('.searchbar-menu')
 const arrivalLink = document.querySelectorAll(".arrival-link");
 const topBarSearchBtn = document.querySelector(".top-bar--search__btn")
-const svgMenuButton = document.querySelector("#svgMenuButton")
+
+const spanMenuItemMen = document.querySelectorAll(".span-menu__item--men")
+
 
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
 
@@ -210,4 +212,21 @@ overlay.addEventListener("click" , () =>{
 
 })
 
+spanMenuItemMen.forEach(elem =>{
+
+  elem.addEventListener("click" , (item) =>{
+    spanMenuItemMen.forEach(it =>{
+      
+      if(it.nextElementSibling.classList.contains("submenu-mobile__active")){
+        console.log(it);
+        it.nextElementSibling.classList.remove("submenu-mobile__active")
+      }
+    })
+    const menumen = item.target.nextElementSibling
+    const svgwomen = elem.childNodes
+    svgwomen[1].classList.toggle("svgrotate")
+    menumen.classList.toggle("submenu-mobile__active")
+  
+  })
+})
 
