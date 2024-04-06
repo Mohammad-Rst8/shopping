@@ -195,11 +195,11 @@ border-radius: 1rem;
 }
 
 .number-box svg{
-    fill: var(--primary-color);
+    stroke: var(--white-color);
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    stroke: var(--primary-color);
+    
 }
 
 

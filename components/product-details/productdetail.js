@@ -190,6 +190,7 @@ const clickChangeSize = () =>{
   sizeWrapp.forEach(size =>{
     
   size.addEventListener('click', (e) => {
+    console.log(e);
     sizeWrapp.forEach(item =>{
           item.classList.remove("active")
         })
@@ -403,12 +404,13 @@ removeAddcomment.addEventListener("click", () =>{
 const insertSubImageWrapp = (product) =>{
   const slides = document.querySelector(".slides")
   const items = product.subimages
+ 
  for (let i = 0; i < items.length; i++) {
   if(items[i]){
 
     slides.insertAdjacentHTML("beforeend" , 
     `
-    <img src="${items[i]}" loading="lazy" alt="${item[i].maincat}" class="image-slide" />
+    <img src="${items[i]}" loading="lazy" alt="${items[i].maincat}" class="image-slide" />
     `)
   }
   else{

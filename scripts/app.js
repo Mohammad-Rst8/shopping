@@ -15,6 +15,8 @@ const arrivalLink = document.querySelectorAll(".arrival-link");
 const topBarSearchBtn = document.querySelector(".top-bar--search__btn")
 
 const spanMenuItemMen = document.querySelectorAll(".span-menu__item--men")
+const submenuMobileSub = document.querySelectorAll(".submenu-mobile__sub")
+const submenuMobile = document.querySelectorAll(".submenu-mobile")
 
 
 let dropdownProfileMenu = document.querySelector(".dropdown-profile__menu");
@@ -115,7 +117,7 @@ xicon.addEventListener('click', () =>{
 arrivalLink.forEach( item =>{
   item.addEventListener('click', e =>{
     e.preventDefault()
-    console.log(e.target.parentElement.dataset.cat);
+
     setAndGetProductPage(e)
   })
 })
@@ -212,21 +214,13 @@ overlay.addEventListener("click" , () =>{
 
 })
 
-spanMenuItemMen.forEach(elem =>{
 
-  elem.addEventListener("click" , (item) =>{
-    spanMenuItemMen.forEach(it =>{
-      
-      if(it.nextElementSibling.classList.contains("submenu-mobile__active")){
-        console.log(it);
-        it.nextElementSibling.classList.remove("submenu-mobile__active")
-      }
-    })
-    const menumen = item.target.nextElementSibling
-    const svgwomen = elem.childNodes
-    svgwomen[1].classList.toggle("svgrotate")
-    menumen.classList.toggle("submenu-mobile__active")
-  
+submenuMobileSub.forEach(item =>{
+  item.addEventListener("click" , (e) =>{
+   const svgmenu = item.firstElementChild.firstElementChild
+    const elem = item.lastChild.previousElementSibling
+    elem.classList.toggle("submenu-mobile__active")
+    svgmenu.classList.toggle("svgrotate")
+   
   })
 })
-

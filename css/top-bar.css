@@ -139,9 +139,7 @@ gap: 2rem;
     stroke: var(--white-color);
     background-color: var(--primary-color);
 }
-.btn:hover svg{
-    stroke: #fff;
-}
+
 
 /* start menu */
 

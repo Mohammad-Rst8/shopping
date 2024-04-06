@@ -192,3 +192,7 @@ data.then(codes => {
 
 
 }
+
+swiperproduct.addEventListener("drag" , (e) =>{
+  console.log(e);
+})
