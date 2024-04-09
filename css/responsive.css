@@ -69,6 +69,9 @@ font-size: 1.5rem;
     .product-size {
     width: 5rem;
     }
+    .swiperproduct-wrapper{
+        scrollbar-width: thin;
+    }
 }
 
 

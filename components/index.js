@@ -2,7 +2,6 @@ import {
   timerspecial,
   getAndShowProductsMenu,
   creatProduct,
-
   clickproduct
 } from "./functions/funcs.js";
 
@@ -14,6 +13,7 @@ const swiperproductWrapper = document.querySelector(".swiperproduct-wrapper");
 const swiperproduct = document.querySelector(".swiperproduct");
 const pageinationArrowRight = document.querySelector(".pageination-arrow__right");
 const pageinationArrowLeft = document.querySelector(".pageination-arrow__left");
+
 
 window.addEventListener("load", async () => {
  
@@ -44,7 +44,7 @@ const swiper = new Swiper(".swiper", {
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
+    clickable: false,
   },
   autoplay: {
     enabled: true,
@@ -113,7 +113,7 @@ const loadBestSale = async (data) => {
   const bestSales = document.querySelector("#best-sales");
   let arr = data.sort((a, b) => b.Remainingnumber - a.Remainingnumber);
 
-  arr = arr.slice(0 , 15)
+  arr = arr.slice(0 , 11)
   
   await arr.forEach((product) => {
     bestSales.insertAdjacentHTML(
@@ -145,7 +145,7 @@ let papularProductImg = document.querySelector(".papular-product__img")
       }
     }).then(res => res.json())
     .then(data => {
-      console.log(data);
+      
       papularProductTitle.innerHTML = data[0].title
       papularProductImg.setAttribute('src', data[0].image)
     })
@@ -177,22 +177,14 @@ const response = await fetch("https://uqkfskiduursccnhissi.supabase.co/rest/v1/c
 const data = response.json()
 data.then(codes => {
   codes.forEach(code => {
-    console.log(code);
+    
     if(code.isBanner){
       discountContent.innerHTML = code.textCopoun + ":"
       discountCode.innerHTML = code.code 
     }
   })
-  // const item = Math.floor(Math.random() * codes.length)
-  // discountContent.innerHTML = codes[item].textCopoun
-  // console.log();
-  // discountCode.innerHTML = codes[item].code
+  
 })
-
 
 
 }
-
-swiperproduct.addEventListener("drag" , (e) =>{
-  console.log(e);
-})

@@ -120,6 +120,7 @@ const creatProduct = product =>{
                   src="${product.mainimage}"
                   alt="gp11"
                   loading="lazy"
+                  draggable="false"
                   class="product-img h-100"
                 />
                 <div class="special-sale__product-description  gap-md-3">

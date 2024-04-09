@@ -202,15 +202,9 @@ if(e.target != searchbarMenu){
 }
 
 })
-overlay.addEventListener("click" , () =>{
-
- 
-    
+overlay.addEventListener("click" , () =>{   
       overlay.classList.remove("w-100")
       mobileTopbar.classList.remove("mobile-menu__active")
-    
- 
-  
 
 })
 
